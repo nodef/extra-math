@@ -1,0 +1,22 @@
+{
+  "name": "math-extra",
+  "version": "0.0.2",
+  "description": "Learn Math.",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/math-extra.git"
+  },
+  "keywords": [
+    "math"
+  ],
+  "author": "wolfram77@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodef/math-extra/issues"
+  },
+  "homepage": "https://github.com/nodef/math-extra#readme"
+}
