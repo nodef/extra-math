@@ -1,6 +1,6 @@
 {
   "name": "math-extra",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Learn Math.",
   "main": "index.js",
   "scripts": {
