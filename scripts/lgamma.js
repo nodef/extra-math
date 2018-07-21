@@ -12,4 +12,6 @@ function lgamma(x) {
   return Math.log(FAC*z/x)+(x+0.5)*Math.log(x+5.5)-(x+5.5);
 };
 module.exports = lgamma;
+// logGamma?
+// Algorithm based on [Numerical Recipes Vol. 3, p. 257](www.nr.com)
 // from: https://github.com/jstat/jstat/blob/master/src/special.js
