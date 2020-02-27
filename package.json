@@ -1,6 +1,6 @@
 {
   "name": "extra-math",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Mathematics is the classification and study of all possible patterns.",
   "main": "index.js",
   "scripts": {

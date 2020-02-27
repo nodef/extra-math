@@ -18,4 +18,3 @@ function gcd(...n) {
   return a;
 }
 module.exports = gcd;
-// https://lemire.me/blog/2013/12/26/fastest-way-to-compute-the-greatest-common-divisor/
