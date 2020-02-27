@@ -18,6 +18,14 @@ function product(...n) {
     a *= n[i];
   return a;
 }
+/**
+ * Gives mean of numbers (average).
+ * @param {...number} n a list of numbers
+ */
+function mean(...n) {
+  if(n.length===0) return 0;
+  return sum(...n)/n.length;
+}
 function gcdPair(x, y) {
   while(y!==0) {
     var t = y;
@@ -118,6 +126,7 @@ function erfc(n) {
 }
 exports.sum = sum;
 exports.product = product;
+exports.mean = mean;
 exports.gcd = gcd;
 exports.lcm = lcm;
 exports.binomial = binomial;
