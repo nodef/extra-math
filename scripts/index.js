@@ -2,6 +2,7 @@ exports.sum = require('./sum');
 exports.product = require('./product');
 exports.mean = require('./mean');
 exports.median = require('./median');
+exports.mode = require('./mode');
 exports.gcd = require('./gcd');
 exports.lcm = require('./lcm');
 exports.binomial = require('./binomial');
