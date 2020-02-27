@@ -11,17 +11,18 @@ const A = [
    6.4196979235649026e-1, -1.3026537197817094
 ];
 
-function erfc(x) {
-  if(x<0) return 2-erfc(-x);
-  var c = 0, d = 0, y = 2/(2+x), z = 4*y-2;
+/**
+ * Gives complementary error function value of number (approximation).
+ * @param {number} n a number
+ */
+function erfc(n) {
+  if(n<0) return 2-erfc(-n);
+  var c = 0, d = 0, y = 2/(2+n), z = 4*y-2;
   for(var i=0, I=A.length-1; i<I; i++) {
     var t = d;
     d = z*d-c+A[i];
     c = t;
   }
-  return y*Math.exp(-x*x+0.5*(A[I]+z*d)-c);
-};
+  return y*Math.exp(-n*n+0.5*(A[I]+z*d)-c);
+}
 module.exports = erfc;
-// https://github.com/AndreasMadsen/mathfn/blob/master/functions/erf.js
-// http://pydoc.net/Python/timbre/1.0.0/timbre.stats/
-// https://github.com/jstat/jstat/blob/master/src/special.js
