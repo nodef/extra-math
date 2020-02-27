@@ -4,3 +4,4 @@ exports.gcd = require('./gcd');
 exports.lcm = require('./lcm');
 exports.binomial = require('./binomial');
 exports.multinomial = require('./multinomial');
+exports.erf = require('./erf');

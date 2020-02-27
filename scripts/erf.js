@@ -17,5 +17,3 @@ function erf(n) {
   return sgn*y;
 }
 module.exports = erf;
-// https://github.com/AndreasMadsen/mathfn/blob/master/functions/erf.js
-// http://www.johndcook.com/cpp_erf.html
