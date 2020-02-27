@@ -1,6 +1,6 @@
 {
   "name": "extra-math",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Mathematics is the classification and study of all possible patterns.",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/nodef/extra-math/issues"
   },
-  "homepage": "https://github.com/nodef/extra-math#readme"
+  "homepage": "https://github.com/nodef/extra-math#readme",
+  "devDependencies": {
+    "find-npm-prefix": "^1.0.2",
+    "recast": "^0.18.7",
+    "tempy": "^0.4.0"
+  }
 }

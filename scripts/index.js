@@ -1,0 +1,1 @@
+exports.gcd = require('./gcd');
