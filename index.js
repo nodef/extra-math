@@ -9,12 +9,23 @@ function gcdPair(x, y) {
 
 /**
  * Gives greatest common divisor of numbers.
- * @param  {...number} x a list of numbers
+ * @param  {...number} n a list of numbers
  */
-function gcd(...x) {
-  var a = x[0]||1;
-  for(var i=1, I=x.length; i<I; i++)
-    a = gcdPair(a, x[i]);
+function gcd(...n) {
+  var a = n[0]||1;
+  for(var i=1, I=n.length; i<I; i++)
+    a = gcdPair(a, n[i]);
+  return a;
+}
+/**
+ * Gives sum of numbers (Σ).
+ * @param {...number} n a list of numbers
+ */
+function sum(...n) {
+  var a = 0;
+  for(var i=0, I=n.length; i<I; i++)
+    a += n[i];
   return a;
 }
 exports.gcd = gcd;
+exports.sum = sum;
