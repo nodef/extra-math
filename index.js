@@ -57,7 +57,7 @@ function getRepeats(ns, r) {
  * Gives the values that appear most often.
  * @param {...number} n a list of numbers
  */
-function mode(...n) {
+function modes(...n) {
   n.sort((a, b) => a-b);
   var r = maxRepeat(n);
   return getRepeats(n, r);
@@ -171,7 +171,7 @@ exports.sum = sum;
 exports.product = product;
 exports.mean = mean;
 exports.median = median;
-exports.mode = mode;
+exports.modes = modes;
 exports.range = range;
 exports.gcd = gcd;
 exports.lcm = lcm;

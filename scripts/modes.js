@@ -18,9 +18,9 @@ function getRepeats(ns, r) {
  * Gives the values that appear most often.
  * @param {...number} n a list of numbers
  */
-function mode(...n) {
+function modes(...n) {
   n.sort((a, b) => a-b);
   var r = maxRepeat(n);
   return getRepeats(n, r);
 }
-module.exports = mode;
+module.exports = modes;
