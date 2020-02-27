@@ -1,6 +1,6 @@
 /**
  * Gives product of numbers (∏).
- * @param  {...number} n a list of numbers
+ * @param {...number} n a list of numbers
  */
 function product(...n) {
   var a = 1;

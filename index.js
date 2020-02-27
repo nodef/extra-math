@@ -1,3 +1,23 @@
+/**
+ * Gives sum of numbers (Σ).
+ * @param {...number} n a list of numbers
+ */
+function sum(...n) {
+  var a = 0;
+  for(var i=0, I=n.length; i<I; i++)
+    a += n[i];
+  return a;
+}
+/**
+ * Gives product of numbers (∏).
+ * @param {...number} n a list of numbers
+ */
+function product(...n) {
+  var a = 1;
+  for(var i=0, I=n.length; i<I; i++)
+    a *= n[i];
+  return a;
+}
 function gcdPair(x, y) {
   while(y!==0) {
     var t = y;
@@ -18,25 +38,13 @@ function gcd(...n) {
   return a;
 }
 /**
- * Gives sum of numbers (Σ).
+ * Gives least common multiple of numbers.
  * @param {...number} n a list of numbers
  */
-function sum(...n) {
-  var a = 0;
-  for(var i=0, I=n.length; i<I; i++)
-    a += n[i];
-  return a;
+function lcm(...n) {
+  return product(...n)/gcd(...n);
 }
-/**
- * Gives product of numbers (∏).
- * @param  {...number} n a list of numbers
- */
-function product(...n) {
-  var a = 1;
-  for(var i=0, I=n.length; i<I; i++)
-    a *= n[i];
-  return a;
-}
-exports.gcd = gcd;
 exports.sum = sum;
 exports.product = product;
+exports.gcd = gcd;
+exports.lcm = lcm;
