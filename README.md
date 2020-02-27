@@ -60,5 +60,5 @@ math.lcm(2, 3, 4);
 [multinomial]: https://github.com/nodef/extra-math/wiki/multinomial
 [erf]: https://github.com/nodef/extra-math/wiki/erf
 [erfc]: https://github.com/nodef/extra-math/wiki/erfc
-
+[extra-math.min]: https://www.npmjs.com/package/extra-math.min
 [(1)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
