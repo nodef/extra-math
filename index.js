@@ -19,12 +19,23 @@ function product(...n) {
   return a;
 }
 /**
- * Gives mean of numbers (average).
+ * Gives average of numbers.
  * @param {...number} n a list of numbers
  */
 function mean(...n) {
   if(n.length===0) return 0;
   return sum(...n)/n.length;
+}
+/**
+ * Gives the value separating the higher and lower halves of numbers.
+ * @param {...number} n a list of numbers
+ */
+function median(...n) {
+  if(n.length===0) return 0;
+  n.sort((a, b) => a-b);
+  var i = n.length>>1;
+  if(n.length & 1===1) return n[i];
+  return (n[i-1]+n[i])/2;
 }
 function gcdPair(x, y) {
   while(y!==0) {
@@ -127,6 +138,7 @@ function erfc(n) {
 exports.sum = sum;
 exports.product = product;
 exports.mean = mean;
+exports.median = median;
 exports.gcd = gcd;
 exports.lcm = lcm;
 exports.binomial = binomial;

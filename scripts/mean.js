@@ -1,7 +1,7 @@
 const sum = require('./sum');
 
 /**
- * Gives mean of numbers (average).
+ * Gives average of numbers.
  * @param {...number} n a list of numbers
  */
 function mean(...n) {
