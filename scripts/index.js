@@ -4,6 +4,7 @@ exports.mean = require('./mean');
 exports.median = require('./median');
 exports.modes = require('./modes');
 exports.range = require('./range');
+exports.variance = require('./variance');
 exports.gcd = require('./gcd');
 exports.lcm = require('./lcm');
 exports.binomial = require('./binomial');

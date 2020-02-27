@@ -69,6 +69,16 @@ function modes(...n) {
 function range(...n) {
   return Math.max(...n)-Math.min(...n);
 }
+/**
+ * Gives the mean of squared deviation of numbers from its mean.
+ * @param {...number} n a list of numbers
+ */
+function variance(...n) {
+  var m = mean(...n), a = 0;
+  for(var x of n)
+    a += (x-m)**2;
+  return n.length>0? a/n.length:0;
+}
 function gcdPair(x, y) {
   while(y!==0) {
     var t = y;
@@ -173,6 +183,7 @@ exports.mean = mean;
 exports.median = median;
 exports.modes = modes;
 exports.range = range;
+exports.variance = variance;
 exports.gcd = gcd;
 exports.lcm = lcm;
 exports.binomial = binomial;
