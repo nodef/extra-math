@@ -1,5 +1,4 @@
-# math-extra
-Learn Maths.
+Mathematics is the classification and study of all possible patterns [(Walter Warwick Sawyer)].
 
 - sum
 - product
@@ -10,3 +9,5 @@ Learn Maths.
 - standarddeviation
 - pdf
 - cdf
+
+[(Walter Warwick Sawyer)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
