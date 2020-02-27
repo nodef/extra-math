@@ -62,6 +62,13 @@ function mode(...n) {
   var r = maxRepeat(n);
   return getRepeats(n, r);
 }
+/**
+ * Gives the difference between the largest and smallest values.
+ * @param {...number} n a list of numbers
+ */
+function range(...n) {
+  return Math.max(...n)-Math.min(...n);
+}
 function gcdPair(x, y) {
   while(y!==0) {
     var t = y;
@@ -165,6 +172,7 @@ exports.product = product;
 exports.mean = mean;
 exports.median = median;
 exports.mode = mode;
+exports.range = range;
 exports.gcd = gcd;
 exports.lcm = lcm;
 exports.binomial = binomial;
