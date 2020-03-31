@@ -1,5 +1,15 @@
+# parts
+src/
+wiki/
+.gitmodules
+
 # build
-scripts/
-.travis.yml
 build.js
 bundle.js
+.travis.yml
+
+# others
+unused/
+unused.js
+wait.d.ts
+TODO
