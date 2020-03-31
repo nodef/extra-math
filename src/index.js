@@ -11,3 +11,6 @@ exports.binomial = require('./binomial');
 exports.multinomial = require('./multinomial');
 exports.erf = require('./erf');
 exports.erfc = require('./erfc');
+exports.mod = require('./mod');
+exports.modp = require('./modp');
+exports.rem = require('./rem');

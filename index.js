@@ -177,6 +177,33 @@ function erfc(n) {
   }
   return y*Math.exp(-n*n+0.5*(A[I]+z*d)-c);
 }
+/**
+ * Gets remainder of x/y with sign of y (floored division).
+ * @param {number} x dividend
+ * @param {number} y divisor
+ * @returns {number}
+ */
+function mod(x, y) {
+  return x - y*Math.floor(x/y);
+}
+/**
+ * Gets remainder of x/y with +ve sign (euclidean division).
+ * @param {number} x dividend
+ * @param {number} y divisor
+ * @returns {number}
+ */
+function modp(x, y) {
+  return x - Math.abs(y)*Math.floor(x/Math.abs(y));
+}
+/**
+ * Gets remainder of x/y with sign of x (truncated division).
+ * @param {number} x dividend
+ * @param {number} y divisor
+ * @returns {number}
+ */
+function rem(x, y) {
+  return x % y;
+}
 exports.sum = sum;
 exports.product = product;
 exports.mean = mean;
@@ -190,3 +217,6 @@ exports.binomial = binomial;
 exports.multinomial = multinomial;
 exports.erf = erf;
 exports.erfc = erfc;
+exports.mod = mod;
+exports.modp = modp;
+exports.rem = rem;
