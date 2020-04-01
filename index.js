@@ -1,111 +1,4 @@
 /**
- * Gives sum of numbers (Σ).
- * @param {...number} n a list of numbers
- */
-function sum(...n) {
-  var a = 0;
-  for(var i=0, I=n.length; i<I; i++)
-    a += n[i];
-  return a;
-}
-/**
- * Gives product of numbers (∏).
- * @param {...number} n a list of numbers
- */
-function product(...n) {
-  var a = 1;
-  for(var i=0, I=n.length; i<I; i++)
-    a *= n[i];
-  return a;
-}
-/**
- * Gives average of numbers.
- * @param {...number} n a list of numbers
- */
-function mean(...n) {
-  if(n.length===0) return 0;
-  return sum(...n)/n.length;
-}
-/**
- * Gives the value separating the higher and lower halves of numbers.
- * @param {...number} n a list of numbers
- */
-function median(...n) {
-  if(n.length===0) return 0;
-  n.sort((a, b) => a-b);
-  var i = n.length>>1;
-  if(n.length & 1===1) return n[i];
-  return (n[i-1]+n[i])/2;
-}
-function maxRepeat(ns) {
-  var count = 0, max = 0;
-  for(var i=1, I=ns.length; i<I; i++) {
-    if(ns[i-1]===ns[i]) count++;
-    else { max = Math.max(max, count); count = 0; }
-  }
-  return Math.max(max, count);
-}
-
-function getRepeats(ns, r) {
-  var a = [];
-  for(var i=0, I=ns.length-r; i<I; i++)
-    if(ns[i]===ns[i+r]) a.push(ns[i+=r]);
-  return a;
-}
-
-/**
- * Gives the values that appear most often.
- * @param {...number} n a list of numbers
- */
-function modes(...n) {
-  n.sort((a, b) => a-b);
-  var r = maxRepeat(n);
-  return getRepeats(n, r);
-}
-/**
- * Gives the difference between the largest and smallest values.
- * @param {...number} n a list of numbers
- */
-function range(...n) {
-  return Math.max(...n)-Math.min(...n);
-}
-/**
- * Gives the mean of squared deviation of numbers from its mean.
- * @param {...number} n a list of numbers
- */
-function variance(...n) {
-  var m = mean(...n), a = 0;
-  for(var x of n)
-    a += (x-m)**2;
-  return n.length>0? a/n.length:0;
-}
-function gcdPair(x, y) {
-  while(y!==0) {
-    var t = y;
-    y = x % y;
-    x = t;
-  }
-  return x;
-}
-
-/**
- * Gives greatest common divisor of numbers.
- * @param  {...number} n a list of numbers
- */
-function gcd(...n) {
-  var a = n[0]||1;
-  for(var i=1, I=n.length; i<I; i++)
-    a = gcdPair(a, n[i]);
-  return a;
-}
-/**
- * Gives least common multiple of numbers.
- * @param {...number} n a list of numbers
- */
-function lcm(...n) {
-  return product(...n)/gcd(...n);
-}
-/**
  * Gives ways to choose k elements from a set of n elements.
  * @param {number} n elements in source set
  * @param {number} k elements in choose set
@@ -121,16 +14,12 @@ function binomial(n, k) {
   return a;
 }
 /**
- * Gives ways to put n objects in m bins (n=sum(ki)).
- * @param {...number} k objects per bin (ki)
+ * Converts radians to degrees.
+ * @param {number} x radians
+ * @returns {number}
  */
-function multinomial(...k) {
-  var n = sum(...k), a = 1;
-  for(var i=0, j=0, I=k.length; i<I;) {
-    if(j<=0) j = k[i++];
-    else a *= n--/j--;
-  }
-  return a;
+function degrees(x) {
+  return x*(180/Math.PI);
 }
 const A1 =  0.254829592;
 const A2 = -0.284496736;
@@ -177,6 +66,71 @@ function erfc(n) {
   }
   return y*Math.exp(-n*n+0.5*(A[I]+z*d)-c);
 }
+function gcdPair(x, y) {
+  while(y!==0) {
+    var t = y;
+    y = x % y;
+    x = t;
+  }
+  return x;
+}
+
+/**
+ * Gives greatest common divisor of numbers.
+ * @param  {...number} n a list of numbers
+ */
+function gcd(...n) {
+  var a = n[0]||1;
+  for(var i=1, I=n.length; i<I; i++)
+    a = gcdPair(a, n[i]);
+  return a;
+}
+/**
+ * Gives product of numbers (∏).
+ * @param {...number} n a list of numbers
+ */
+function product(...n) {
+  var a = 1;
+  for(var i=0, I=n.length; i<I; i++)
+    a *= n[i];
+  return a;
+}
+/**
+ * Gives least common multiple of numbers.
+ * @param {...number} n a list of numbers
+ */
+function lcm(...n) {
+  return product(...n)/gcd(...n);
+}
+/**
+ * Gives sum of numbers (Σ).
+ * @param {...number} n a list of numbers
+ */
+function sum(...n) {
+  var a = 0;
+  for(var i=0, I=n.length; i<I; i++)
+    a += n[i];
+  return a;
+}
+/**
+ * Gives average of numbers.
+ * @param {...number} n a list of numbers
+ */
+function mean(...n) {
+  if(n.length===0) return 0;
+  return sum(...n)/n.length;
+}
+/**
+ * Gives the value separating the higher and lower halves of numbers.
+ * @param {...number} n a list of numbers
+ */
+function median(...n) {
+  if(n.length===0) return 0;
+  n.sort((a, b) => a-b);
+  var i = n.length>>1;
+  if(n.length & 1===1) return n[i];
+  return (n[i-1]+n[i])/2;
+}
 /**
  * Gets remainder of x/y with sign of y (floored division).
  * @param {number} x dividend
@@ -185,6 +139,31 @@ function erfc(n) {
  */
 function mod(x, y) {
   return x - y*Math.floor(x/y);
+}
+function maxRepeat(ns) {
+  var count = 0, max = 0;
+  for(var i=1, I=ns.length; i<I; i++) {
+    if(ns[i-1]===ns[i]) count++;
+    else { max = Math.max(max, count); count = 0; }
+  }
+  return Math.max(max, count);
+}
+
+function getRepeats(ns, r) {
+  var a = [];
+  for(var i=0, I=ns.length-r; i<I; i++)
+    if(ns[i]===ns[i+r]) a.push(ns[i+=r]);
+  return a;
+}
+
+/**
+ * Gives the values that appear most often.
+ * @param {...number} n a list of numbers
+ */
+function modes(...n) {
+  n.sort((a, b) => a-b);
+  var r = maxRepeat(n);
+  return getRepeats(n, r);
 }
 /**
  * Gets remainder of x/y with +ve sign (euclidean division).
@@ -196,21 +175,16 @@ function modp(x, y) {
   return x - Math.abs(y)*Math.floor(x/Math.abs(y));
 }
 /**
- * Gets remainder of x/y with sign of x (truncated division).
- * @param {number} x dividend
- * @param {number} y divisor
- * @returns {number}
+ * Gives ways to put n objects in m bins (n=sum(ki)).
+ * @param {...number} k objects per bin (ki)
  */
-function rem(x, y) {
-  return x % y;
-}
-/**
- * Converts radians to degrees.
- * @param {number} x radians
- * @returns {number}
- */
-function degrees(x) {
-  return x*(180/Math.PI);
+function multinomial(...k) {
+  var n = sum(...k), a = 1;
+  for(var i=0, j=0, I=k.length; i<I;) {
+    if(j<=0) j = k[i++];
+    else a *= n--/j--;
+  }
+  return a;
 }
 /**
  * Converts degrees to radians.
@@ -220,21 +194,47 @@ function degrees(x) {
 function radians(x) {
   return x*(Math.PI/180);
 }
-exports.sum = sum;
-exports.product = product;
-exports.mean = mean;
-exports.median = median;
-exports.modes = modes;
-exports.range = range;
-exports.variance = variance;
-exports.gcd = gcd;
-exports.lcm = lcm;
+/**
+ * Gives the difference between the largest and smallest values.
+ * @param {...number} n a list of numbers
+ */
+function range(...n) {
+  return Math.max(...n)-Math.min(...n);
+}
+/**
+ * Gets remainder of x/y with sign of x (truncated division).
+ * @param {number} x dividend
+ * @param {number} y divisor
+ * @returns {number}
+ */
+function rem(x, y) {
+  return x % y;
+}
+/**
+ * Gives the mean of squared deviation of numbers from its mean.
+ * @param {...number} n a list of numbers
+ */
+function variance(...n) {
+  var m = mean(...n), a = 0;
+  for(var x of n)
+    a += (x-m)**2;
+  return n.length>0? a/n.length:0;
+}
 exports.binomial = binomial;
-exports.multinomial = multinomial;
+exports.degrees = degrees;
 exports.erf = erf;
 exports.erfc = erfc;
+exports.gcd = gcd;
+exports.lcm = lcm;
+exports.mean = mean;
+exports.median = median;
 exports.mod = mod;
+exports.modes = modes;
 exports.modp = modp;
-exports.rem = rem;
-exports.degrees = degrees;
+exports.multinomial = multinomial;
+exports.product = product;
 exports.radians = radians;
+exports.range = range;
+exports.rem = rem;
+exports.sum = sum;
+exports.variance = variance;

@@ -1,4 +1,11 @@
 - standarddeviation
 - pdf
 - cdf
+constrain()
+dist()
+lerp()
+mag()
+map()
+norm()
+sq()
 https://www.npmjs.com/package/moremath
