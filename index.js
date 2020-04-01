@@ -204,6 +204,22 @@ function modp(x, y) {
 function rem(x, y) {
   return x % y;
 }
+/**
+ * Converts radians to degrees.
+ * @param {number} x radians
+ * @returns {number}
+ */
+function degrees(x) {
+  return x*(180/Math.PI);
+}
+/**
+ * Converts degrees to radians.
+ * @param {number} x degrees
+ * @returns {number}
+ */
+function radians(x) {
+  return x*(Math.PI/180);
+}
 exports.sum = sum;
 exports.product = product;
 exports.mean = mean;
@@ -220,3 +236,5 @@ exports.erfc = erfc;
 exports.mod = mod;
 exports.modp = modp;
 exports.rem = rem;
+exports.degrees = degrees;
+exports.radians = radians;

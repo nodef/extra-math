@@ -14,3 +14,5 @@ exports.erfc = require('./erfc');
 exports.mod = require('./mod');
 exports.modp = require('./modp');
 exports.rem = require('./rem');
+exports.degrees = require('./degrees');
+exports.radians = require('./radians');

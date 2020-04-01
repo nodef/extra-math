@@ -1,6 +1,6 @@
 {
   "name": "extra-math",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Mathematics is the classification and study of all possible patterns.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,25 @@
   },
   "keywords": [
     "extra",
-    "math"
+    "math",
+    "binomial",
+    "degrees",
+    "erf",
+    "erfc",
+    "gcd",
+    "lcm",
+    "mean",
+    "median",
+    "mod",
+    "modes",
+    "modp",
+    "multinomial",
+    "product",
+    "radians",
+    "range",
+    "rem",
+    "sum",
+    "variance"
   ],
   "author": "wolfram77@gmail.com",
   "license": "MIT",
