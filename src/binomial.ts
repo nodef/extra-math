@@ -1,9 +1,9 @@
 /**
  * Gives ways to choose k elements from a set of n elements.
- * @param {number} n elements in source set
- * @param {number} k elements in choose set
+ * @param n elements in source set
+ * @param k elements in choose set
  */
-function binomial(n, k) {
+function binomial(n: number, k: number): number {
   // generalization to negative integers
   if(k<0 || k>Math.abs(n)) return 0;
   if(n<0) return Math.pow(-1, k)*binomial(-n, k);
@@ -13,4 +13,4 @@ function binomial(n, k) {
     a *= n/i;
   return a;
 }
-module.exports = binomial;
+export default binomial;

@@ -7,13 +7,13 @@ const P  =  0.3275911;
 
 /**
  * Gives error function value of number (approximation).
- * @param {number} n a number
+ * @param n a number
  */
-function erf(n) {
+function erf(n: number): number {
   var sgn = n<0? -1:1;
   var n = Math.abs(n);
   var t = 1/(1+ P*n);
   var y = 1-(((((A5*t+A4)*t)+A3)*t+A2)*t+A1)*t*Math.exp(-n*n);
   return sgn*y;
 }
-module.exports = erf;
+export default erf;

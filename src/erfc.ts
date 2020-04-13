@@ -13,9 +13,9 @@ const A = [
 
 /**
  * Gives complementary error function value of number (approximation).
- * @param {number} n a number
+ * @param n a number
  */
-function erfc(n) {
+function erfc(n: number): number {
   if(n<0) return 2-erfc(-n);
   var c = 0, d = 0, y = 2/(2+n), z = 4*y-2;
   for(var i=0, I=A.length-1; i<I; i++) {
@@ -25,4 +25,4 @@ function erfc(n) {
   }
   return y*Math.exp(-n*n+0.5*(A[I]+z*d)-c);
 }
-module.exports = erfc;
+export default erfc;

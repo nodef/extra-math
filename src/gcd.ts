@@ -1,4 +1,4 @@
-function gcdPair(x, y) {
+function gcdPair(x: number, y: number): number {
   while(y!==0) {
     var t = y;
     y = x % y;
@@ -9,12 +9,12 @@ function gcdPair(x, y) {
 
 /**
  * Gives greatest common divisor of numbers.
- * @param  {...number} n a list of numbers
+ * @param n a list of numbers
  */
-function gcd(...n) {
+function gcd(...n: number[]): number {
   var a = n[0]||1;
   for(var i=1, I=n.length; i<I; i++)
     a = gcdPair(a, n[i]);
   return a;
 }
-module.exports = gcd;
+export default gcd;

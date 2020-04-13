@@ -1,4 +1,4 @@
-function maxRepeat(ns) {
+function maxRepeat(ns: number[]): number {
   var count = 0, max = 0;
   for(var i=1, I=ns.length; i<I; i++) {
     if(ns[i-1]===ns[i]) count++;
@@ -7,7 +7,7 @@ function maxRepeat(ns) {
   return Math.max(max, count);
 }
 
-function getRepeats(ns, r) {
+function getRepeats(ns: number[], r: number): number[] {
   var a = [];
   for(var i=0, I=ns.length-r; i<I; i++)
     if(ns[i]===ns[i+r]) a.push(ns[i+=r]);
@@ -16,11 +16,11 @@ function getRepeats(ns, r) {
 
 /**
  * Gives the values that appear most often.
- * @param {...number} n a list of numbers
+ * @param n a list of numbers
  */
-function modes(...n) {
+function modes(...n: number[]): number[] {
   n.sort((a, b) => a-b);
   var r = maxRepeat(n);
   return getRepeats(n, r);
 }
-module.exports = modes;
+export default modes;
