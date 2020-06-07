@@ -1,5 +1,12 @@
 Mathematics is the classification and study of all possible patterns [(1)]. [:running:] [:vhs:] [:package:] [:moon:] [:ledger:]
+
+Methods as separate packages:
+- `@extra-math/lcm`: use [rollup] to bundle this es module.
+- `@extra-math/lcm.min`: use in browser ([browserify], [uglify-js]).
+
 This package includes some common statistics functions.
+
+> Stability: Experimental.
 
 ```javascript
 const math = require('extra-math');
@@ -43,8 +50,10 @@ math.lcm(2, 3, 4);
 
 [![nodef](https://merferry.glitch.me/card/extra-math.svg)](https://nodef.github.io)
 
-> Browserified, minified version of this package is [extra-math.min].
-
+[(1)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
+[browserify]: https://www.npmjs.com/package/browserify
+[rollup]: https://www.npmjs.com/package/rollup
+[uglify-js]: https://www.npmjs.com/package/uglify-js
 [sum]: https://github.com/nodef/extra-math/wiki/sum
 [product]: https://github.com/nodef/extra-math/wiki/product
 [mean]: https://github.com/nodef/extra-math/wiki/mean
@@ -61,8 +70,6 @@ math.lcm(2, 3, 4);
 [rem]: https://github.com/nodef/extra-math/wiki/rem
 [mod]: https://github.com/nodef/extra-math/wiki/mod
 [modp]: https://github.com/nodef/extra-math/wiki/modp
-[extra-math.min]: https://www.npmjs.com/package/extra-math.min
-[(1)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
 [:running:]: https://npm.runkit.com/extra-math
 [:vhs:]: https://asciinema.org/a/337174
 [:package:]: https://www.npmjs.com/package/extra-math
