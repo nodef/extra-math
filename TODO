@@ -14,7 +14,7 @@ https://github.com/jstat/jstat/blob/master/src/special.js
 https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/factorial.ts
 https://processing.org/reference/mag_.html
 https://processing.org/reference/dist_.html
-
+hero's formula
 
 npm-fourier	math	Module for brute-force calculations of the discrete Fourier transform and inverse discrete Fourier transform.
 ps-math-tools	math	A Node.js module that returns the plural form of any noun## Installation  ```sh npm install mypluralize --save yarn add mypluralize bower install pluralize --save ```## Usage### Javascript```javascript var pluralise = require('mypluralize'); var boys = pl
