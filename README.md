@@ -1,4 +1,4 @@
-Mathematics is the classification and study of all possible patterns [(1)].
+Mathematics is the classification and study of all possible patterns [(1)]. [:running:] [:vhs:] [:package:] [:moon:] [:ledger:]
 This package includes some common statistics functions.
 
 ```javascript
@@ -63,3 +63,8 @@ math.lcm(2, 3, 4);
 [modp]: https://github.com/nodef/extra-math/wiki/modp
 [extra-math.min]: https://www.npmjs.com/package/extra-math.min
 [(1)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
+[:running:]: https://npm.runkit.com/extra-math
+[:vhs:]: https://asciinema.org/a/337174
+[:package:]: https://www.npmjs.com/package/extra-math
+[:moon:]: https://www.npmjs.com/package/extra-math.min
+[:ledger:]: https://unpkg.com/extra-math/
