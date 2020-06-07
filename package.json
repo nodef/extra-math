@@ -1,13 +1,14 @@
 {
   "name": "extra-math",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Mathematics is the classification and study of all possible patterns.",
   "main": "index.js",
   "scripts": {
     "einit": "ebuild init",
     "eupdate": "ebuild update",
     "escatter": "ebuild scatter",
-    "test": "exit"
+    "test": "exit",
+    "ecode": "ebuild update --docs false"
   },
   "runkitExampleFilename": "example.js",
   "repository": {
@@ -43,6 +44,6 @@
   },
   "homepage": "https://github.com/nodef/extra-math#readme",
   "devDependencies": {
-    "extra-build": "^1.0.115"
+    "extra-build": "^1.0.176"
   }
 }
