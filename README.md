@@ -1,10 +1,10 @@
-Mathematics is the classification and study of all possible patterns [(1)]. [:running:] [:vhs:] [:package:] [:moon:] [:ledger:]
+Mathematics is the classification and study of all possible patterns. [:running:] [:vhs:] [:package:] [:moon:] [:ledger:]
 
 Methods as separate packages:
 - `@extra-math/lcm`: use [rollup] to bundle this es module.
 - `@extra-math/lcm.min`: use in browser ([browserify], [uglify-js]).
 
-This package includes some common statistics functions.
+This package includes some common statistics functions. [(1)]
 
 > Stability: Experimental.
 

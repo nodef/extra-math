@@ -1,8 +1,13 @@
 {
   "name": "extra-math",
-  "version": "1.0.20",
-  "description": "Mathematics is the classification and study of all possible patterns (1).",
+  "version": "1.1.0",
+  "description": "Mathematics is the classification and study of all possible patterns.",
   "main": "index.js",
+  "module": "index.mjs",
+  "exports": {
+    "require": "./index.js",
+    "import": "./index.mjs"
+  },
   "scripts": {
     "einit": "ebuild init",
     "eupdate": "ebuild update",
@@ -44,6 +49,6 @@
   },
   "homepage": "https://github.com/nodef/extra-math#readme",
   "devDependencies": {
-    "extra-build": "^1.0.176"
+    "extra-build": "^1.0.177"
   }
 }
