@@ -37,28 +37,28 @@ math.lcm(2, 3, 4);
 
 | Method        | Action                                                              |
 | ------------- | ------------------------------------------------------------------- |
-| [sum]         | Gives sum of numbers (Σ).                                           |
-| [product]     | Gives product of numbers (∏).                                       |
-| [mean]        | Gives average of numbers.                                           |
-| [median]      | Gives the value separating the higher and lower halves of numbers.  |
-| [modes]       | Gives the values that appear most often.                            |
-| [range]       | Gives the difference between the largest and smallest values.       |
-| [variance]    | Gives the mean of squared deviation of numbers from its mean.       |
-| [erf]         | Gives error function value of number (approximation).               |
-| [erfc]        | Gives complementary error function value of number (approximation). |
+| [sum]         | Get sum of numbers (Σ).
+| [product]     | Get product of numbers (∏).
+| [mean]        | Get average of numbers.
+| [median]      | Get the value separating the higher and lower halves of numbers.
+| [modes]       | Get the values that appear most often.
+| [range]       | Get the difference between the largest and smallest values.
+| [variance]    | Get the mean of squared deviation of numbers from its mean.
+| [erf]         | Get error function value of number (approximation).
+| [erfc]        | Get complementary error function value of number (approximation).
 |               |
-| [rem]         | Gets remainder of x/y with sign of x (truncated division).          |
-| [mod]         | Gets remainder of x/y with sign of y (floored division).            |
-| [modp]        | Gets remainder of x/y with +ve sign (euclidean division).           |
-| [gcd]         | Gives greatest common divisor of numbers.                           |
-| [lcm]         | Gives least common multiple of numbers.                             |
-| [binomial]    | Gives ways to choose k elements from a set of n elements.           |
-| [multinomial] | Gives ways to put n objects in m bins (n=sum(ki)).                  |
+| [rem]         | Get remainder of x/y with sign of x (truncated division).
+| [mod]         | Get remainder of x/y with sign of y (floored division).
+| [modp]        | Get remainder of x/y with +ve sign (euclidean division).
+| [gcd]         | Get greatest common divisor of numbers.
+| [lcm]         | Get least common multiple of numbers.
+| [binomial]    | Get ways to choose k elements from a set of n elements.
+| [multinomial] | Get ways to put n objects in m bins (n=sum(ki)).
 
 <br>
 <br>
 
-[![](https://img.youtube.com/vi/lxQS58t39_U/maxresdefault.jpg)](https://www.youtube.com/watch?v=lxQS58t39_U)
+[![](https://img.youtube.com/vi/dW8Cy6WrO94/maxresdefault.jpg)](https://www.youtube.com/watch?v=dW8Cy6WrO94)
 
 [(1)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
 [sum]: https://github.com/nodef/extra-math/wiki/sum
