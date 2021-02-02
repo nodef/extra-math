@@ -1,6 +1,6 @@
 {
   "name": "extra-math",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Mathematics is the classification and study of all possible patterns.",
   "main": "index.js",
   "module": "index.mjs",
@@ -9,11 +9,9 @@
     "import": "./index.mjs"
   },
   "scripts": {
-    "einit": "ebuild init",
-    "eupdate": "ebuild update",
-    "escatter": "ebuild scatter",
     "test": "exit",
-    "ecode": "ebuild update --docs false"
+    "build": "ebuild export+main+example+wiki+readme --wikiExample=false --asciinema=false",
+    "deploy": "ebuild jsdoc+export+main+meta+example+github+publish"
   },
   "runkitExampleFilename": "example.js",
   "repository": {
@@ -22,25 +20,7 @@
   },
   "keywords": [
     "extra",
-    "math",
-    "binomial",
-    "degrees",
-    "erf",
-    "erfc",
-    "gcd",
-    "lcm",
-    "mean",
-    "median",
-    "mod",
-    "modes",
-    "modp",
-    "multinomial",
-    "product",
-    "radians",
-    "range",
-    "rem",
-    "sum",
-    "variance"
+    "math"
   ],
   "author": "wolfram77@gmail.com",
   "license": "MIT",
