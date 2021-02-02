@@ -1,5 +1,5 @@
-import gcd from './gcd';
-import product from './product';
+import gcd from "./gcd";
+import product from "./product";
 
 /**
  * Gives least common multiple of numbers.

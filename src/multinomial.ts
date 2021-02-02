@@ -1,4 +1,4 @@
-import sum from './sum';
+import sum from "./sum";
 
 /**
  * Gives ways to put n objects in m bins (n=sum(ki)).

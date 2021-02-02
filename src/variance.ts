@@ -1,4 +1,4 @@
-import mean from './mean';
+import mean from "./mean";
 
 /**
  * Gives the mean of squared deviation of numbers from its mean.
