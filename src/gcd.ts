@@ -8,7 +8,7 @@ function gcdPair(x: number, y: number): number {
 }
 
 /**
- * Gives greatest common divisor of numbers.
+ * Get greatest common divisor of numbers.
  * @param n a list of numbers
  */
 function gcd(...n: number[]): number {

@@ -1,5 +1,5 @@
 /**
- * Gets remainder of x/y with +ve sign (euclidean division).
+ * Get remainder of x/y with +ve sign (euclidean division).
  * @param x dividend
  * @param y divisor
  */

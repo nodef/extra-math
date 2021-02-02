@@ -11,6 +11,8 @@ This package includes some common statistics functions. [(1)]<br>
 
 > Stability: Experimental.
 
+<br>
+
 ```javascript
 const math = require("extra-math");
 
@@ -27,7 +29,11 @@ math.lcm(2, 3, 4);
 // 12
 ```
 
-### reference
+<br>
+<br>
+
+
+## Index
 
 | Method        | Action                                                              |
 | ------------- | ------------------------------------------------------------------- |
@@ -50,8 +56,9 @@ math.lcm(2, 3, 4);
 | [multinomial] | Gives ways to put n objects in m bins (n=sum(ki)).                  |
 
 <br>
+<br>
 
-[![nodef](https://merferry.glitch.me/card/extra-math.svg)](https://nodef.github.io)
+[![](https://img.youtube.com/vi/lxQS58t39_U/maxresdefault.jpg)](https://www.youtube.com/watch?v=lxQS58t39_U)
 
 [(1)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
 [sum]: https://github.com/nodef/extra-math/wiki/sum

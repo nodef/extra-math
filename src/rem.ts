@@ -1,5 +1,5 @@
 /**
- * Gets remainder of x/y with sign of x (truncated division).
+ * Get remainder of x/y with sign of x (truncated division).
  * @param x dividend
  * @param y divisor
  */

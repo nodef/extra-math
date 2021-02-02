@@ -1,5 +1,5 @@
 /**
- * Gives product of numbers (∏).
+ * Get product of numbers (∏).
  * @param n a list of numbers
  */
 function product(...n: number[]): number {

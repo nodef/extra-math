@@ -1,5 +1,5 @@
 /**
- * Converts radians to degrees.
+ * Convert radians to degrees.
  * @param x radians
  */
 function degrees(x: number): number {

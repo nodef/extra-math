@@ -1,7 +1,7 @@
 import sum from "./sum";
 
 /**
- * Gives average of numbers.
+ * Get average of numbers.
  * @param n a list of numbers
  */
 function mean(...n: number[]): number {

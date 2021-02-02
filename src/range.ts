@@ -1,5 +1,5 @@
 /**
- * Gives the difference between the largest and smallest values.
+ * Get the difference between the largest and smallest values.
  * @param n a list of numbers
  */
 function range(...n: number[]): number {

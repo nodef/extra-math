@@ -1,5 +1,5 @@
 /**
- * Gives ways to choose k elements from a set of n elements.
+ * Get ways to choose k elements from a set of n elements.
  * @param n elements in source set
  * @param k elements in choose set
  */

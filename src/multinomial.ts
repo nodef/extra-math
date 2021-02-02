@@ -1,7 +1,7 @@
 import sum from "./sum";
 
 /**
- * Gives ways to put n objects in m bins (n=sum(ki)).
+ * Get ways to put n objects in m bins (n=sum(ki)).
  * @param k objects per bin (ki)
  */
 function multinomial(...k: number[]): number {

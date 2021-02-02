@@ -1,5 +1,5 @@
 /**
- * Gives sum of numbers (Σ).
+ * Get sum of numbers (Σ).
  * @param n a list of numbers
  */
 function sum(...n: number[]): number {
