@@ -15,6 +15,8 @@ This package includes some common statistics functions. [(1)]<br>
 
 ```javascript
 const math = require("extra-math");
+// import * as math from "extra-math";
+// import * as math from "https://unpkg.com/extra-math@1.1.15/index.mjs"; (deno)
 
 math.sum(1, 2, 3, 4);
 // 10
