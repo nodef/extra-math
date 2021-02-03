@@ -12,7 +12,7 @@ const A = [
 ];
 
 /**
- * Get complementary error function value of number (approximation).
+ * Finds complementary error function value of number (approximation).
  * @param n a number
  */
 function erfc(n: number): number {

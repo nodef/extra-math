@@ -2,7 +2,7 @@ import mean from "./mean";
 
 
 /**
- * Get the mean of squared deviation of numbers from its mean.
+ * Finds the mean of squared deviation of numbers from its mean.
  * @param n a list of numbers
  */
 function variance(...n: number[]): number {

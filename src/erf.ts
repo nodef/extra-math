@@ -6,7 +6,7 @@ const A5 =  1.061405429;
 const P  =  0.3275911;
 
 /**
- * Get error function value of number (approximation).
+ * Finds error function value of number (approximation).
  * @param n a number
  */
 function erf(n: number): number {

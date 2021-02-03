@@ -1,5 +1,5 @@
 /**
- * Get remainder of x/y with sign of y (floored division).
+ * Finds remainder of x/y with sign of y (floored division).
  * @param x dividend
  * @param y divisor
  */

@@ -1,5 +1,5 @@
 /**
- * Get the value separating the higher and lower halves of numbers.
+ * Finds the value separating the higher and lower halves of numbers.
  * @param n a list of numbers
  */
 function median(...n: number[]): number {

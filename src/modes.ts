@@ -15,7 +15,7 @@ function getRepeats(ns: number[], r: number): number[] {
 }
 
 /**
- * Get the values that appear most often.
+ * Finds the values that appear most often.
  * @param n a list of numbers
  */
 function modes(...n: number[]): number[] {

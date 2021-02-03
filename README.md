@@ -39,23 +39,23 @@ math.lcm(2, 3, 4);
 
 | Method        | Action                                                              |
 | ------------- | ------------------------------------------------------------------- |
-| [sum]         | Get sum of numbers (Σ).
-| [product]     | Get product of numbers (∏).
-| [mean]        | Get average of numbers.
-| [median]      | Get the value separating the higher and lower halves of numbers.
-| [modes]       | Get the values that appear most often.
-| [range]       | Get the difference between the largest and smallest values.
-| [variance]    | Get the mean of squared deviation of numbers from its mean.
-| [erf]         | Get error function value of number (approximation).
-| [erfc]        | Get complementary error function value of number (approximation).
+| [sum]         | Finds sum of numbers (Σ).
+| [product]     | Finds product of numbers (∏).
+| [mean]        | Finds average of numbers.
+| [median]      | Finds the value separating the higher and lower halves of numbers.
+| [modes]       | Finds the values that appear most often.
+| [range]       | Finds the difference between the largest and smallest values.
+| [variance]    | Finds the mean of squared deviation of numbers from its mean.
+| [erf]         | Finds error function value of number (approximation).
+| [erfc]        | Finds complementary error function value of number (approximation).
 |               |
-| [rem]         | Get remainder of x/y with sign of x (truncated division).
-| [mod]         | Get remainder of x/y with sign of y (floored division).
-| [modp]        | Get remainder of x/y with +ve sign (euclidean division).
-| [gcd]         | Get greatest common divisor of numbers.
-| [lcm]         | Get least common multiple of numbers.
-| [binomial]    | Get ways to choose k elements from a set of n elements.
-| [multinomial] | Get ways to put n objects in m bins (n=sum(ki)).
+| [rem]         | Finds remainder of x/y with sign of x (truncated division).
+| [mod]         | Finds remainder of x/y with sign of y (floored division).
+| [modp]        | Finds remainder of x/y with +ve sign (euclidean division).
+| [gcd]         | Finds greatest common divisor of numbers.
+| [lcm]         | Finds least common multiple of numbers.
+| [binomial]    | Finds ways to choose k elements from a set of n elements.
+| [multinomial] | Finds ways to put n objects in m bins (n=sum(ki)).
 
 <br>
 <br>
