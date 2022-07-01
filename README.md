@@ -1,20 +1,19 @@
-Mathematics is the classification and study of all possible patterns.
-This package includes some common statistics functions. [(1)]<br>
-:package: [NPM](https://www.npmjs.com/package/extra-math),
-:smiley_cat: [GitHub](https://github.com/orgs/nodef/packages?repo_name=extra-math),
-:running: [RunKit](https://npm.runkit.com/extra-math),
-:vhs: [Asciinema](https://asciinema.org/a/337174),
-:moon: [Minified](https://www.npmjs.com/package/extra-math.min),
-:scroll: [Files](https://unpkg.com/extra-math/),
-:newspaper: [JSDoc](https://nodef.github.io/extra-math/),
-:blue_book: [Wiki](https://github.com/nodef/extra-math/wiki/).
+This package includes some common statistics functions.<br>
+📦 [Node.js](https://www.npmjs.com/package/extra-math),
+🌐 [Web](https://www.npmjs.com/package/extra-math.web),
+📜 [Files](https://unpkg.com/extra-math/),
+📰 [JSDoc](https://nodef.github.io/extra-math/),
+📘 [Wiki](https://github.com/nodef/extra-math/wiki/).
 
-> Stability: Experimental.
+Mathematics is the classification and study of all possible patterns. [(1)]
+
+> Stability: [Experimental](https://www.youtube.com/watch?v=L1j93RnIxEo).
 
 <br>
 
+
 ```javascript
-const math = require("extra-math");
+const math = require('extra-math');
 // import * as math from "extra-math";
 // import * as math from "https://unpkg.com/extra-math@1.1.15/index.mjs"; (deno)
 
@@ -60,7 +59,24 @@ math.lcm(2, 3, 4);
 <br>
 <br>
 
+
+## Reference
+
+- [MathLib by @alawatthe](https://github.com/alawatthe/MathLib)
+- [Processing Reference](https://processing.org/reference)
+- [Modulo operation](https://en.wikipedia.org/wiki/Modulo_operation)
+- [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm)
+- [Least common multiple](https://en.wikipedia.org/wiki/Least_common_multiple)
+- [Permutation](https://en.wikipedia.org/wiki/Permutation)
+- [Binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient)
+- [Multinomial distribution](https://en.wikipedia.org/wiki/Multinomial_distribution)
+
+<br>
+<br>
+
+
 [![](https://img.youtube.com/vi/dW8Cy6WrO94/maxresdefault.jpg)](https://www.youtube.com/watch?v=dW8Cy6WrO94)
+
 
 [(1)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
 [sum]: https://github.com/nodef/extra-math/wiki/sum

@@ -1,6 +1,6 @@
 {
   "name": "extra-math",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Mathematics is the classification and study of all possible patterns.",
   "main": "index.js",
   "module": "index.mjs",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "extra-build": "^2.1.28",
+    "extra-build": "^2.1.31",
     "rollup-plugin-cleanup": "^3.2.1",
     "rollup-plugin-dts": "^4.2.2"
   }

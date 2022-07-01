@@ -15,23 +15,37 @@ function keywords(ds) {
 
 
 // Publish root package to NPM, GitHub.
-function publishRoot(ds, ver) {
+function publishRoot(ds, ver, typ) {
   var _package = build.readDocument('package.json');
-  var m = build.readMetadata('.');
+  var _readme  = build.readDocument('README.md');
+  var m  = build.readMetadata('.');
+  var md = build.readFileText('README.md');
   m.version  = ver;
   m.keywords = keywords(ds);
+  if (typ) {
+    m.name = `${m.name}.${typ}`;
+    m.description.replace(/\.$/, `{${typ}}.`);
+    md.replace(/(unpkg\.com\/)(\S+?)(\/\))/, `$1$2.${typ}$3`);
+  }
   build.writeMetadata('.', m);
+  build.writeFileText('README.md', md);
   build.publish('.');
   try { build.publishGithub('.', owner); }
   catch {}
   build.writeDocument(_package);
+  build.writeDocument(_readme);
 }
 
 
 // Deploy root package to NPM, GitHub.
 function deployRoot(ds, ver) {
+  var m   = build.readMetadata('.');
+  var sym = build.symbolname(m.name);
   build.bundleScript(`.build/${srcts}`);
-  publishRoot(ds, ver);
+  publishRoot(ds, ver, '');
+  build.webifyScript('index.mjs', 'index.mjs', {format: 'esm'});
+  build.webifyScript('index.js',  'index.js',  {format: 'cjs', symbol: sym});
+  publishRoot(ds, ver, 'web');
 }
 
 

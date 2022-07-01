@@ -5,30 +5,36 @@
  * Find the remainder of x/y with sign of x (truncated division).
  * @param x dividend
  * @param y divisor
+ * @returns trunc(x/y)
  */
 export function rem(x: number, y: number): number {
   return x % y;
 }
+// - https://en.wikipedia.org/wiki/Modulo_operation
 
 
 /**
  * Find the remainder of x/y with sign of y (floored division).
  * @param x dividend
  * @param y divisor
+ * @returns floor(x/y)
  */
 export function mod(x: number, y: number): number {
   return x - y*Math.floor(x/y);
 }
+// - https://en.wikipedia.org/wiki/Modulo_operation
 
 
 /**
  * Find the remainder of x/y with +ve sign (euclidean division).
  * @param x dividend
  * @param y divisor
+ * @returns n>0: floor(x/y), n<0: ceil(x/y)
  */
 export function modp(x: number, y: number): number {
   return x - Math.abs(y)*Math.floor(x/Math.abs(y));
 }
+// - https://en.wikipedia.org/wiki/Modulo_operation
 
 
 // Find the greatest common divisor of a pair of numbers.
@@ -40,10 +46,12 @@ function gcdPair(x: number, y: number): number {
   }
   return x;
 }
+// - https://en.wikipedia.org/wiki/Euclidean_algorithm
 
 /**
  * Find the greatest common divisor of numbers.
  * @param xs a list of numbers
+ * @returns gcd(x₁, x₂, ...)
  */
 export function gcd(...xs: number[]): number {
   var a = xs[0] || 1;
@@ -56,57 +64,63 @@ export function gcd(...xs: number[]): number {
 /**
  * Find the least common multiple of numbers.
  * @param xs a list of numbers
+ * @returns lcm(x₁, x₂, ...)
  */
 export function lcm(...xs: number[]): number {
   return product(...xs)/gcd(...xs);
 }
+// - https://en.wikipedia.org/wiki/Least_common_multiple
 
 
 /**
  * Find the factorial of a number.
- * @param x a number
+ * @param n a number
  * @param k denominator factorial [0]
- * @returns k=0: x!, x!/k!
+ * @returns P(n, k); k=0: n!, k>0: n!/k!
  */
-export function factorial(x: number, k: number=0): number {
-  if (x<0) return 0;
-  for (var i=k+1, a=1; i<=x; i++)
-    a *= x;
+export function factorial(n: number, k: number=0): number {
+  if (n<0) return 0;
+  for (var i=k+1, a=1; i<=n; i++)
+    a *= n;
   return a;
 }
-// https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/factorial.ts
-// https://en.wikipedia.org/wiki/Permutation
+// - https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/factorial.ts
+// - https://en.wikipedia.org/wiki/Permutation
 
 
 /**
  * Find the number of ways to choose k elements from a set of n elements.
  * @param n elements in source set
  * @param k elements in choose set
+ * @returns C(n, k)
  */
 export function binomial(n: number, k: number): number {
-  // generalization to negative integers
+  // Generalization to negative integers
   if (k<0 || k>Math.abs(n)) return 0;
   if (n<0) return Math.pow(-1, k)*binomial(-n, k);
-  // take advantage of symmetry
+  // Take advantage of symmetry
   k = k>n-k? n-k:k;
   for (var a=1, i=1; i<=k; i++, n--)
     a *= n/i;
   return a;
 }
+// - https://en.wikipedia.org/wiki/Binomial_coefficient
 
 
 /**
- * TODO: Find the number of ways to put n objects in m bins (n=sum(ki)).
- * @param k objects per bin (ki)
+ * Find the number of ways to put n objects in m bins (n=sum(kᵢ)).
+ * @param ks objects per bin (kᵢ)
+ * @returns n!/(k₁!k₂!...)
  */
-export function multinomial(...k: number[]): number {
-  var n = sum(...k), a = 1;
-  for(var i=0, j=0, I=k.length; i<I;) {
-    if(j<=0) j = k[i++];
+export function multinomial(...ks: number[]): number {
+  var n = sum(...ks), a = 1;
+  for (var i=0, j=0, I=ks.length; i<I;) {
+    if (j<=0) j = ks[i++];
     else a *= n--/j--;
   }
   return a;
 }
+// - https://en.wikipedia.org/wiki/Multinomial_distribution
 
 
 
@@ -115,7 +129,7 @@ export function multinomial(...k: number[]): number {
 // ============
 
 /**
- * Constrain a number within a minimum and maximum value.
+ * Constrain a number within a minimum and a maximum value.
  * @param x a number
  * @param min minimum value
  * @param max maximum value
@@ -124,7 +138,7 @@ export function multinomial(...k: number[]): number {
 export function constrain(x: number, min: number, max: number): number {
   return Math.min(Math.max(x, min), max);
 }
-// https://processing.org/reference/constrain_.html
+// - https://processing.org/reference/constrain_.html
 
 
 /**
@@ -136,11 +150,11 @@ export function constrain(x: number, min: number, max: number): number {
 export function root(x: number, n: number): number {
   return Math.pow(x, 1/n);
 }
-// https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/root.ts
+// - https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/root.ts
 
 
 /**
- * TODO: (log?) Find the logarithm of a number with a given base.
+ * Find the logarithm of a number with a given base.
  * @param x a number
  * @param b logarithm base
  * @returns log_b (x)
@@ -148,6 +162,7 @@ export function root(x: number, n: number): number {
 export function logb(x: number, b: number): number {
   return Math.log(x)/Math.log(b);
 }
+// - https://en.wikipedia.org/wiki/Logarithm
 
 
 /**
@@ -359,14 +374,13 @@ const ERF_P  =  0.3275911;
  * TODO: Find error function value of number (approximation).
  * @param x a number
  */
-function erf(x: number): number {
+export function erf(x: number): number {
   var sgn = x<0? -1:1;
   var x = Math.abs(x);
   var t = 1/(1+ ERF_P*x);
   var y = 1-(((((ERF_A5*t+ERF_A4)*t)+ERF_A3)*t+ERF_A2)*t+ERF_A1)*t*Math.exp(-x*x);
   return sgn*y;
 }
-export default erf;
 
 
 const ERFC_TABLE = [
