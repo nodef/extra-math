@@ -67,7 +67,10 @@ export function gcd(...xs: number[]): number {
  * @returns lcm(x₁, x₂, ...)
  */
 export function lcm(...xs: number[]): number {
-  return product(...xs)/gcd(...xs);
+  var a = xs[0] || 1;
+  for (var i=1, I=xs.length; i<I; i++)
+      a = a*xs[i] / gcdPair(a, xs[i]);
+  return a;
 }
 // - https://en.wikipedia.org/wiki/Least_common_multiple
 

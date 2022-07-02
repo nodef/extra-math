@@ -24,16 +24,16 @@ const math = require('extra-math');
 // import * as math from "https://unpkg.com/extra-math/index.mjs"; (deno)
 
 math.sum(1, 2, 3, 4);
-// 10
+// → 10
 
 math.median(1, 7, 8);
-// 7
+// → 7
 
 math.variance(1, 2, 3, 4);
-// 1.25
+// → 1.25
 
 math.lcm(2, 3, 4);
-// 12
+// → 12
 ```
 
 <br>

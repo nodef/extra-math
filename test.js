@@ -1,54 +1,23 @@
-const cp = require('./');
+const math = require('./');
+const assert = require('assert');
 
 
-// 1. List files in current directory.
-async function example1() {
-  var {stdout, stderr} = await cp.exec('ls -a');
-  var {stdout, stderr} = await cp.execFile('ls', ['-a']);
-  cp.exec('ls -a', (err, stdout, stderr) => 0);
-  cp.execFile('ls', ['-a'], (err, stdout, stderr) => 0);
-  // → .
-  // → ..
-  // → .build
-  // → .git
-  // → .github
-  // → ...
+// 1. Basic tests.
+function example1() {
+  var a = math.sum(1, 2, 3, 4);
+  assert.equal(a, 10);
+  // → 10
+
+  var a = math.median(1, 7, 8);
+  assert.equal(a, 7);
+  // → 7
+
+  var a = math.variance(1, 2, 3, 4);
+  assert.equal(a, 1.25);
+  // → 1.25
+
+  var a = math.lcm(2, 3, 4);
+  assert.equal(a, 12);
+  // → 12
 }
-// example1();
-
-
-// 2. List files in 'src' directory.
-async function example2() {
-  var {stdout, stderr} = await cp.exec('ls -a', {cwd: 'src'});
-  var {stdout, stderr} = await cp.execFile('ls', ['-a'], {cwd: 'src'});
-  cp.exec('ls -a', {cwd: 'src'}, (err, stdout, stderr) => 0);
-  cp.execFile('ls', ['-a'], {cwd: 'src'}, (err, stdout, stderr) => 0);
-  // → .
-  // → ..
-  // → index.ts
-}
-// example2();
-
-
-// 3. Locate path of node executable.
-async function example3() {
-  var paths = process.env.PATH.split(';');
-  var exec  = await cp.which('node');
-  var exec  = await cp.which('node', {paths});
-  // → 'D:\\Program Files\\nodejs\\node.exe'
-}
-// example3();
-
-
-// 4. Locate path of n*e executables.
-async function example4() {
-  var paths = process.env.PATH.split(';');
-  var execs = await cp.whichAll(/^n.*?e$/);
-  var execs = await cp.whichAll(/^n.*?e$/, {paths});
-  // → [
-  // →   'D:\\Program Files\\Git\\usr\\bin\\nice.exe',
-  // →   'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.2\\bin\\nvprune.exe',
-  // →   'D:\\Program Files\\nodejs\\node.exe'
-  // → ]
-}
-example4();
+example1();
