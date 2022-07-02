@@ -145,30 +145,6 @@ export function constrain(x: number, min: number, max: number): number {
 
 
 /**
- * Find the nth root of a number (ⁿ√).
- * @param x a number
- * @param n root
- * @returns ⁿ√x
- */
-export function root(x: number, n: number): number {
-  return Math.pow(x, 1/n);
-}
-// - https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/root.ts
-
-
-/**
- * Find the logarithm of a number with a given base.
- * @param x a number
- * @param b logarithm base [e]
- * @returns log_b (x)
- */
-export function log(x: number, b: number=Math.E): number {
-  return Math.log(x)/Math.log(b);
-}
-// - https://en.wikipedia.org/wiki/Logarithm
-
-
-/**
  * Normalize a number from its current range into a value between 0 and 1.
  * @param x a number
  * @param r lower bound of current range
@@ -208,6 +184,30 @@ export function lerp(x: number, y: number, t: number): number {
 }
 // - https://processing.org/reference/lerp_.html
 // - https://docs.unity3d.com/ScriptReference/Vector3.Lerp.html
+
+
+/**
+ * Find the nth root of a number (ⁿ√).
+ * @param x a number
+ * @param n root
+ * @returns ⁿ√x
+ */
+ export function root(x: number, n: number): number {
+  return Math.pow(x, 1/n);
+}
+// - https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/root.ts
+
+
+/**
+ * Find the logarithm of a number with a given base.
+ * @param x a number
+ * @param b logarithm base [e]
+ * @returns log_b (x)
+ */
+export function log(x: number, b: number=Math.E): number {
+  return Math.log(x)/Math.log(b);
+}
+// - https://en.wikipedia.org/wiki/Logarithm
 
 
 /**
@@ -322,7 +322,7 @@ export function radians(x: number): number {
  * @param xs vector ([x, y, z, ...])
  * @returns √(x² + y² + z²)
  */
- export function mag(xs: number[]): number {
+ export function magnitude(xs: number[]): number {
   var a = 0;
   for (var i=0, I=xs.length; i<I; i++)
     a += xs[i]**2;
@@ -337,7 +337,7 @@ export function radians(x: number): number {
  * @param ys second point ([x, y, z, ...])
  * @returns √(Δx² + Δy² + Δz²)
  */
-export function dist(xs: number[], ys: number[]): number {
+export function distance(xs: number[], ys: number[]): number {
   var a = 0;
   for (var i=0, I=xs.length; i<I; i++)
     a += (xs[i] - ys[i])**2;
