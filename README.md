@@ -122,7 +122,8 @@ math.lcm(2, 3, 4);
 <br>
 
 
-[![](https://img.youtube.com/vi/dW8Cy6WrO94/maxresdefault.jpg)](https://www.youtube.com/watch?v=dW8Cy6WrO94)
+[![](https://img.youtube.com/vi/dW8Cy6WrO94/maxresdefault.jpg)](https://www.youtube.com/watch?v=dW8Cy6WrO94)<br>
+[![DOI](https://zenodo.org/badge/141781770.svg)](https://zenodo.org/badge/latestdoi/141781770)
 
 
 [rem]: https://nodef.github.io/extra-math/modules.html#rem
