@@ -110,7 +110,7 @@ export function binomial(n: number, k: number): number {
 /**
  * Find the number of ways to put n objects in m bins (n=sum(kᵢ)).
  * @param ks objects per bin (kᵢ)
- * @returns n!/(k₁!k₂!...)
+ * @returns n!/(k₁!k₂!...) | n=sum(kᵢ)
  */
 export function multinomial(...ks: number[]): number {
   var n = sum(...ks), a = 1;
@@ -156,10 +156,10 @@ export function root(x: number, n: number): number {
 /**
  * Find the logarithm of a number with a given base.
  * @param x a number
- * @param b logarithm base
+ * @param b logarithm base [e]
  * @returns log_b (x)
  */
-export function logb(x: number, b: number): number {
+export function log(x: number, b: number=Math.E): number {
   return Math.log(x)/Math.log(b);
 }
 // - https://en.wikipedia.org/wiki/Logarithm
@@ -168,42 +168,123 @@ export function logb(x: number, b: number): number {
 /**
  * Normalize a number from its current range into a value between 0 and 1.
  * @param x a number
- * @param min lower bound of current range
- * @param max upper bound of current range
+ * @param r lower bound of current range
+ * @param R upper bound of current range
  * @returns ∈ [0, 1]
  */
- export function norm(x: number, min: number, max: number): number {
-  return (x - min)/(max - min);
+ export function norm(x: number, r: number, R: number): number {
+  return (x - r)/(R - r);
 }
-// https://processing.org/reference/norm_.html
+// - https://processing.org/reference/norm_.html
 
 
 /**
  * Re-map a number from one range to another.
  * @param x a number
- * @param min lower bound of current range
- * @param max upper bound of current range
- * @param amin lower bound of target range
- * @param amax upper bound of target range
+ * @param r lower bound of current range
+ * @param R upper bound of current range
+ * @param t lower bound of target range
+ * @param T upper bound of target range
  * @returns ∈ [ymin, ymax]
  */
-export function map(x: number, min: number, max: number, amin: number, amax: number): number {
-  return amin + ((x - min)/(max - min)) * (amax - amin);
+export function map(x: number, r: number, R: number, t: number, T: number): number {
+  return t + ((x - r)/(R - r)) * (T - t);
 }
-// https://processing.org/reference/map_.html
+// - https://processing.org/reference/map_.html
 
 
 /**
- * TODO: (argument order ok?) Calculate a number between two numbers at a specific increment.
- * @param min minimum value
- * @param max maximum value
- * @param x a number between 0 to 1
- * @returns ∈ [min, max]
+ * Linearly interpolate a number between two numbers.
+ * @param x start number
+ * @param y stop number
+ * @param t interpolant ∈ [0, 1]
+ * @returns ∈ [x, y]
  */
-export function lerp(min: number, max: number, x: number): number {
-  return min + x*(max - min);
+export function lerp(x: number, y: number, t: number): number {
+  return x + t*(y - x);
 }
-// https://processing.org/reference/lerp_.html
+// - https://processing.org/reference/lerp_.html
+// - https://docs.unity3d.com/ScriptReference/Vector3.Lerp.html
+
+
+/**
+ * Compute the gamma function of a number (Γ).
+ * @param x a number
+ * @returns Γ(x); for +ve integer Γ(x) = x!
+ */
+ export function gamma(x: number): number {
+  var x  = x - 1;
+  var e1 = Math.sqrt(2*Math.PI*x);
+  var e2 = Math.pow(x/Math.E, x);
+  var e3 = Math.pow(x*Math.sinh(1/x), x/2);
+  var e4 = Math.exp((7/324)*(1/((x**3) * (35*x**2 + 33))));
+  return e1*e2*e3*e4;
+}
+// - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5840229/
+
+
+/**
+ * Compute the natural logarithm of the absolute value of the gamma function of a number (log-Γ).
+ * @param x a number
+ * @returns log(|Γ(x)|)
+ */
+ export function lgamma(x: number): number {
+  return Math.log(Math.abs(gamma(x)));
+}
+// - https://en.cppreference.com/w/cpp/numeric/math/lgamma
+
+
+const ERF_A1 =  0.254829592;
+const ERF_A2 = -0.284496736;
+const ERF_A3 =  1.421413741;
+const ERF_A4 = -1.453152027;
+const ERF_A5 =  1.061405429;
+const ERF_P  =  0.3275911;
+
+/**
+ * Find error function value of number (approximation).
+ * @param x a number
+ * @returns erf(x)
+ */
+export function erf(x: number): number {
+  var sgn = x<0? -1:1;
+  var x = Math.abs(x);
+  var t = 1/(1+ ERF_P*x);
+  var y = 1-(((((ERF_A5*t+ERF_A4)*t)+ERF_A3)*t+ERF_A2)*t+ERF_A1)*t*Math.exp(-x*x);
+  return sgn*y;
+}
+// - ?
+
+
+const ERFC_TABLE = [
+  -2.8e-17, 1.21e-16, -9.4e-17, -1.523e-15, 7.106e-15,
+   3.81e-16, -1.12708e-13, 3.13092e-13, 8.94487e-13,
+  -6.886027e-12, 2.394038e-12, 9.6467911e-11,
+  -2.27365122e-10, -9.91364156e-10, 5.059343495e-9,
+   6.529054439e-9, -8.5238095915e-8, 1.5626441722e-8,
+   1.303655835580e-6, -1.624290004647e-6,
+  -2.0278578112534e-5, 4.2523324806907e-5,
+   3.66839497852761e-4, -9.46595344482036e-4,
+  -9.561514786808631e-3, 1.9476473204185836e-2,
+   6.4196979235649026e-1, -1.3026537197817094
+];
+
+/**
+ * Find the complementary error function value of number (approximation).
+ * @param x a number
+ * @returns erfc(x)
+ */
+export function erfc(x: number): number {
+  if(x<0) return 2-erfc(-x);
+  var c = 0, d = 0, y = 2/(2+x), z = 4*y-2;
+  for(var i=0, I=ERFC_TABLE.length-1; i<I; i++) {
+    var t = d;
+    d = z*d-c+ERFC_TABLE[i];
+    c = t;
+  }
+  return y*Math.exp(-x*x+0.5*(ERFC_TABLE[I]+z*d)-c);
+}
+// - ?
 
 
 
@@ -214,48 +295,50 @@ export function lerp(min: number, max: number, x: number): number {
 /**
  * Convert radians to degrees.
  * @param x radians
+ * @returns 2π → 360
  */
 export function degrees(x: number): number {
   return x*(180/Math.PI);
 }
-// https://processing.org/reference/degrees_.html
+// - https://processing.org/reference/degrees_.html
 
 
 /**
  * Convert degrees to radians.
  * @param x degrees
+ * @returns 360 → 2π
  */
 export function radians(x: number): number {
   return x*(Math.PI/180);
 }
-// https://processing.org/reference/radians_.html
+// - https://processing.org/reference/radians_.html
 
 
 /**
- * TODO: (use array?) Calculate the magnitude (length) of a vector.
- * @param x length on x-axis
- * @param y length on y-axis
- * @param z length on x-axis
+ * Calculate the magnitude (length) of a vector.
+ * @param xs vector ([x, y, z, ...])
  * @returns √(x² + y² + z²)
  */
- export function mag(x: number, y: number, z: number): number {
-  return Math.sqrt(x*x + y*y + z*z);
+ export function mag(xs: number[]): number {
+  var a = 0;
+  for (var i=0, I=xs.length; i<I; i++)
+    a += xs[i]**2;
+  return Math.sqrt(a);
 }
 // https://processing.org/reference/mag_.html
 
 
 /**
- * TODO: (use array?) Calculate the distance between points.
- * @param x1 x-coordinate of first point
- * @param y1 y-coordinate of first point
- * @param z1 z-coordinate of first point
- * @param x2 x-coordinate of second point
- * @param y2 y-coordinate of second point
- * @param z2 z-coordinate of second point
+ * Calculate the distance between two points.
+ * @param xs first point ([x, y, z, ...])
+ * @param ys second point ([x, y, z, ...])
  * @returns √(Δx² + Δy² + Δz²)
  */
-export function dist(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number): number {
-  return Math.sqrt((x2 - x1)**2 + (y2 - y1)**2 + (z2 - z1)**2);
+export function dist(xs: number[], ys: number[]): number {
+  var a = 0;
+  for (var i=0, I=xs.length; i<I; i++)
+    a += (xs[i] - ys[i])**2;
+  return Math.sqrt(a);
 }
 // https://processing.org/reference/dist_.html
 
@@ -268,6 +351,7 @@ export function dist(x1: number, y1: number, z1: number, x2: number, y2: number,
 /**
  * Find the sum of numbers (Σ).
  * @param xs a list of numbers
+ * @returns Σxᵢ
  */
 export function sum(...xs: number[]): number {
   var a = 0;
@@ -280,6 +364,7 @@ export function sum(...xs: number[]): number {
 /**
  * Find the product of numbers (∏).
  * @param xs a list of numbers
+ * @returns ∏xᵢ
  */
 export function product(...xs: number[]): number {
   var a = 1;
@@ -292,6 +377,7 @@ export function product(...xs: number[]): number {
 /**
  * Find the average of numbers.
  * @param xs a list of numbers
+ * @returns Σxᵢ/n | n = size(xs)
  */
 export function mean(...xs: number[]): number {
   if (xs.length===0) return 0;
@@ -302,6 +388,7 @@ export function mean(...xs: number[]): number {
 /**
  * Find the value separating the higher and lower halves of numbers.
  * @param xs a list of numbers
+ * @returns xₘ | sort(xs) = [..., xₘ, ...]
  */
 export function median(...xs: number[]): number {
   if (xs.length===0) return 0;
@@ -333,6 +420,7 @@ function getRepeats(xs: number[], r: number): number[] {
 /**
  * Find the values that appear most often.
  * @param xs a list of numbers
+ * @returns [xₘ₁, xₘ₂, ...] | count(xₘᵢ) ≥ count(xᵢ) ∀ xᵢ ∈ xs
  */
 export function modes(...xs: number[]): number[] {
   xs.sort((a, b) => a-b);
@@ -344,6 +432,7 @@ export function modes(...xs: number[]): number[] {
 /**
  * Find the difference between the largest and smallest values.
  * @param xs a list of numbers
+ * @returns max(xs) - min(xs)
  */
 export function range(...xs: number[]): number {
   return Math.max(...xs) - Math.min(...xs);
@@ -353,6 +442,7 @@ export function range(...xs: number[]): number {
 /**
  * Find the mean of squared deviation of numbers from its mean.
  * @param xs a list of numbers
+ * @returns σ² = E[(xs - µ)²] | µ = mean(xs)
  */
 export function variance(...xs: number[]): number {
   if (xs.length===0) return 0;
@@ -360,53 +450,4 @@ export function variance(...xs: number[]): number {
   for (var x of xs)
     a += (x-m)**2;
   return a/xs.length;
-}
-
-
-const ERF_A1 =  0.254829592;
-const ERF_A2 = -0.284496736;
-const ERF_A3 =  1.421413741;
-const ERF_A4 = -1.453152027;
-const ERF_A5 =  1.061405429;
-const ERF_P  =  0.3275911;
-
-/**
- * TODO: Find error function value of number (approximation).
- * @param x a number
- */
-export function erf(x: number): number {
-  var sgn = x<0? -1:1;
-  var x = Math.abs(x);
-  var t = 1/(1+ ERF_P*x);
-  var y = 1-(((((ERF_A5*t+ERF_A4)*t)+ERF_A3)*t+ERF_A2)*t+ERF_A1)*t*Math.exp(-x*x);
-  return sgn*y;
-}
-
-
-const ERFC_TABLE = [
-  -2.8e-17, 1.21e-16, -9.4e-17, -1.523e-15, 7.106e-15,
-   3.81e-16, -1.12708e-13, 3.13092e-13, 8.94487e-13,
-  -6.886027e-12, 2.394038e-12, 9.6467911e-11,
-  -2.27365122e-10, -9.91364156e-10, 5.059343495e-9,
-   6.529054439e-9, -8.5238095915e-8, 1.5626441722e-8,
-   1.303655835580e-6, -1.624290004647e-6,
-  -2.0278578112534e-5, 4.2523324806907e-5,
-   3.66839497852761e-4, -9.46595344482036e-4,
-  -9.561514786808631e-3, 1.9476473204185836e-2,
-   6.4196979235649026e-1, -1.3026537197817094
-];
-
-/**
- * TODO: Find the complementary error function value of number (approximation).
- * @param x a number
- */
-export function erfc(x: number): number {
-  if(x<0) return 2-erfc(-x);
-  var c = 0, d = 0, y = 2/(2+x), z = 4*y-2;
-  for(var i=0, I=ERFC_TABLE.length-1; i<I; i++) {
-    var t = d;
-    d = z*d-c+ERFC_TABLE[i];
-    c = t;
-  }
-  return y*Math.exp(-x*x+0.5*(ERFC_TABLE[I]+z*d)-c);
 }

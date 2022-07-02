@@ -2,6 +2,9 @@ const build = require('extra-build');
 
 const owner  = 'nodef';
 const srcts  = 'index.ts';
+const LOCATIONS = [
+  'src/index.ts',
+];
 
 
 
@@ -80,11 +83,23 @@ function readmeDescription(d) {
   return a;
 }
 
+
+// Sort docs details by original order.
+function compareLocation(a, b) {
+  if (a.kind!==b.kind) return 0;
+  var alocn = a.location.replace(/.*?@types\/node.*?\:/, 'src/_file.ts:');
+  var blocn = b.location.replace(/.*?@types\/node.*?\:/, 'src/_file.ts:');
+  var [afile] = alocn.split(':');
+  var [bfile] = blocn.split(':');
+  return LOCATIONS.indexOf(afile) - LOCATIONS.indexOf(bfile) || alocn.localeCompare(blocn);
+}
+
+
 // Update README.
 function updateReadme(ds) {
   var m  = build.readMetadata('.');
   var repo = m.name;
-  var ds = ds.slice();
+  var ds = ds.slice().sort(compareLocation);
   var dm = new Map(ds.map(d => [d.name, d]));
   var txt = build.readFileText('README.md');
   txt = build.wikiUpdateIndex(txt, dm, readmeDescription);
