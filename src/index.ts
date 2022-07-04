@@ -59,6 +59,7 @@ export function gcd(...xs: number[]): number {
     a = gcdPair(a, xs[i]);
   return a;
 }
+export {gcd as hcf};
 
 
 /**
@@ -141,7 +142,17 @@ export function multinomial(...ks: number[]): number {
 export function constrain(x: number, min: number, max: number): number {
   return Math.min(Math.max(x, min), max);
 }
+export {constrain as clamp};
 // - https://processing.org/reference/constrain_.html
+// - https://www.npmjs.com/package/clamp
+// - https://en.cppreference.com/w/cpp/algorithm/clamp
+// - https://dlang.org/library/std/algorithm/comparison/clamp.html
+// - https://www.rdocumentation.org/packages/raster/versions/3.0-12/topics/clamp
+// - https://docs.microsoft.com/en-us/dotnet/api/system.math.clamp?view=netcore-3.1
+// - https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-clamp
+// - https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
+// - https://docs.unity3d.com/ScriptReference/Mathf.Clamp.html
+// - https://en.wikipedia.org/wiki/Clamping_(graphics)
 
 
 /**
