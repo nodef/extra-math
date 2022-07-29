@@ -20,4 +20,4 @@ test("example1", () => {
   var a = math.lcm(2, 3, 4);
   expect(a).toBe(12);
   // → 12
-)};
+});
