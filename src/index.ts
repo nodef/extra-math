@@ -46,6 +46,7 @@ function gcdPair(x: number, y: number): number {
   }
   return x;
 }
+// - https://lemire.me/blog/2013/12/26/fastest-way-to-compute-the-greatest-common-divisor/
 // - https://en.wikipedia.org/wiki/Euclidean_algorithm
 
 /**
@@ -108,6 +109,7 @@ export function binomial(n: number, k: number): number {
     a *= n/i;
   return a;
 }
+// - https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/binomial.ts
 // - https://en.wikipedia.org/wiki/Binomial_coefficient
 
 
@@ -267,7 +269,9 @@ export function erf(x: number): number {
   var y = 1-(((((ERF_A5*t+ERF_A4)*t)+ERF_A3)*t+ERF_A2)*t+ERF_A1)*t*Math.exp(-x*x);
   return sgn*y;
 }
-// - ?
+// - https://github.com/AndreasMadsen/mathfn/blob/master/functions/erf.js
+// - http://www.johndcook.com/cpp_erf.html
+// - https://en.wikipedia.org/wiki/Error_function
 
 
 const ERFC_TABLE = [
@@ -298,7 +302,10 @@ export function erfc(x: number): number {
   }
   return y*Math.exp(-x*x+0.5*(ERFC_TABLE[I]+z*d)-c);
 }
-// - ?
+// - https://github.com/AndreasMadsen/mathfn/blob/master/functions/erf.js
+// - http://pydoc.net/Python/timbre/1.0.0/timbre.stats/
+// - https://github.com/jstat/jstat/blob/master/src/special.js
+// - https://en.wikipedia.org/wiki/Error_function
 
 
 
@@ -411,6 +418,8 @@ export function median(...xs: number[]): number {
   if ((xs.length & 1)===1) return xs[i];
   return (xs[i-1] + xs[i])/2;
 }
+// - https://stackoverflow.com/questions/45309447/calculating-median-javascript
+// - https://en.wikipedia.org/wiki/Median
 
 
 // Get the maximum number of times any number has repeated in a sorted array.
@@ -441,6 +450,7 @@ export function modes(...xs: number[]): number[] {
   var r = maxRepeat(xs);
   return getRepeats(xs, r);
 }
+// - https://en.wikipedia.org/wiki/Mode_(statistics)
 
 
 /**
@@ -451,6 +461,7 @@ export function modes(...xs: number[]): number[] {
 export function range(...xs: number[]): number {
   return Math.max(...xs) - Math.min(...xs);
 }
+// - https://en.wikipedia.org/wiki/Range_(statistics)
 
 
 /**
@@ -465,3 +476,4 @@ export function variance(...xs: number[]): number {
     a += (x-m)**2;
   return a/xs.length;
 }
+// - https://en.wikipedia.org/wiki/Variance
