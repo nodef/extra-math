@@ -226,23 +226,23 @@ export function log(x: number, b: number=Math.E): number {
 // - https://en.wikipedia.org/wiki/Logarithm
 
 
-function powAbs(x: number, n: number): number {
-  return Math.sign(x) * Math.pow(Math.abs(x), n);
-}
+// function powAbs(x: number, n: number): number {
+//   return Math.sign(x) * Math.pow(Math.abs(x), n);
+// }
 
 /**
  * Compute the gamma function of a number (Γ).
  * @param x a number
  * @returns Γ(x); for +ve integer Γ(x) = x!
  */
-function gamma(x: number): number {
-  var x  = x - 1;
-  var e1 = Math.sqrt(Math.abs(2*Math.PI*x));
-  var e2 = powAbs(x/Math.E, x);
-  var e3 = powAbs(x*Math.sinh(1/x), x/2);
-  var e4 = Math.exp((7/324)*(1/((x**3) * (35*x**2 + 33))));
-  return e1*e2*e3*e4;
-}
+// function gamma(x: number): number {
+//   var x  = x - 1;
+//   var e1 = Math.sqrt(Math.abs(2*Math.PI*x));
+//   var e2 = powAbs(x/Math.E, x);
+//   var e3 = powAbs(x*Math.sinh(1/x), x/2);
+//   var e4 = Math.exp((7/324)*(1/((x**3) * (35*x**2 + 33))));
+//   return e1*e2*e3*e4;
+// }
 // - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5840229/
 
 
@@ -251,9 +251,9 @@ function gamma(x: number): number {
  * @param x a number
  * @returns log(|Γ(x)|)
  */
-function lgamma(x: number): number {
-  return Math.log(Math.abs(gamma(x)));
-}
+// function lgamma(x: number): number {
+//   return Math.log(Math.abs(gamma(x)));
+// }
 // - https://en.cppreference.com/w/cpp/numeric/math/lgamma
 
 

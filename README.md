@@ -15,11 +15,11 @@ can be obtained. To calculate the number of ways of *ordering items*, use
 [factorial]/`P(n, k)`, [binomial]/`C(n, k)`, or [multinomial]/`n!/k₁!k₂!...`.
 
 **Real numbers**: *Range* of a number can be controlled with [constrain],
-[norm], or [map]. Use [lerp] for *linear interpolation* (or extrapolation);
+[normalize], or [remap]. Use [lerp] for *linear interpolation* (or extrapolation);
 [root] for calculating the *n-th root* of a number; and [log] to find the
 *logarithm* of a number with a given base. Results of *special mathematical
-functions* (approximations) for a given number can be obtained with [gamma],
-[lgamma], [erf], and [erfc].
+functions* (approximations) for a given number can be obtained with [erf]
+and [erfc].
 
 **Geometry**: Perform conversion from [degrees] to [radians] and vice versa.
 Find the [magnitude] of a vector or [distance] between two points.
@@ -75,23 +75,21 @@ math.lcm(2, 3, 4);
 | [factorial] | Find the factorial of a number. |
 | [binomial] | Find the number of ways to choose k elements from a set of n elements. |
 | [multinomial] | Find the number of ways to put n objects in m bins (n=sum(kᵢ)). |
-|   |   |
+|  |  |
 | [constrain] | Constrain a number within a minimum and a maximum value. |
-| [norm] | Normalize a number from its current range into a value between 0 and 1. |
-| [map] | Re-map a number from one range to another. |
+| [normalize] | Normalize a number from its current range into a value between 0 and 1. |
+| [remap] | Re-map a number from one range to another. |
 | [lerp] | Linearly interpolate a number between two numbers. |
 | [root] | Find the nth root of a number (ⁿ√). |
 | [log] | Find the logarithm of a number with a given base. |
-| [gamma] | Compute the gamma function of a number (Γ). |
-| [lgamma] | Compute the natural logarithm of the absolute value of the gamma function of a number (log-Γ). |
 | [erf] | Find error function value of number (approximation). |
 | [erfc] | Find the complementary error function value of number (approximation). |
-|   |   |
+|  |  |
 | [degrees] | Convert radians to degrees. |
 | [radians] | Convert degrees to radians. |
 | [magnitude] | Calculate the magnitude (length) of a vector. |
 | [distance] | Calculate the distance between two points. |
-|   |   |
+|  |  |
 | [sum] | Find the sum of numbers (Σ). |
 | [product] | Find the product of numbers (∏). |
 | [mean] | Find the average of numbers. |
@@ -124,6 +122,9 @@ math.lcm(2, 3, 4);
 
 [![](https://img.youtube.com/vi/dW8Cy6WrO94/maxresdefault.jpg)](https://www.youtube.com/watch?v=dW8Cy6WrO94)<br>
 [![DOI](https://zenodo.org/badge/141781770.svg)](https://zenodo.org/badge/latestdoi/141781770)
+[![Coverage Status](https://coveralls.io/repos/github/nodef/extra-math/badge.svg?branch=master)](https://coveralls.io/github/nodef/extra-math?branch=master)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/13d7102b0273f2a77c66/test_coverage)](https://codeclimate.com/github/nodef/extra-math/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/13d7102b0273f2a77c66/maintainability)](https://codeclimate.com/github/nodef/extra-math/maintainability)
 
 
 [rem]: https://nodef.github.io/extra-math/modules.html#rem
@@ -137,11 +138,9 @@ math.lcm(2, 3, 4);
 [constrain]: https://nodef.github.io/extra-math/modules.html#constrain
 [root]: https://nodef.github.io/extra-math/modules.html#root
 [log]: https://nodef.github.io/extra-math/modules.html#log
-[norm]: https://nodef.github.io/extra-math/modules.html#norm
-[map]: https://nodef.github.io/extra-math/modules.html#map
+[normalize]: https://nodef.github.io/extra-math/modules.html#normalize
+[remap]: https://nodef.github.io/extra-math/modules.html#remap
 [lerp]: https://nodef.github.io/extra-math/modules.html#lerp
-[gamma]: https://nodef.github.io/extra-math/modules.html#gamma
-[lgamma]: https://nodef.github.io/extra-math/modules.html#lgamma
 [erf]: https://nodef.github.io/extra-math/modules.html#erf
 [erfc]: https://nodef.github.io/extra-math/modules.html#erfc
 [degrees]: https://nodef.github.io/extra-math/modules.html#degrees

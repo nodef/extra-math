@@ -91,6 +91,8 @@ test("gcd", () => {
   expect(a).toBe(3);
   var a = gcd(6, 15, 20);
   expect(a).toBe(1);
+  var a = gcd();  // sp
+  expect(a).toBe(1);  // sp
 });
 
 
@@ -101,6 +103,8 @@ test("lcm", () => {
   expect(a).toBe(12);
   var a = lcm(2, 3, 4, 5);
   expect(a).toBe(60);
+  var a = lcm();  // sp
+  expect(a).toBe(1);  // sp
 });
 
 
@@ -111,6 +115,8 @@ test("factorial", () => {
   expect(a).toBe(720);
   var a = factorial(7);
   expect(a).toBe(5040);
+  var a = factorial(-1);  // sp
+  expect(a).toBe(0);  // sp
 });
 // - https://en.wikipedia.org/wiki/Factorial
 
@@ -122,6 +128,10 @@ test("binomial", () => {
   expect(a).toBe(6);
   var a = binomial(4, 3);
   expect(a).toBe(4);
+  var a = binomial(4, -1);  // sp
+  expect(a).toBe(0);  // sp
+  var a = binomial(-4, 1);  // sp
+  expect(a).toBe(-4);  // sp
 });
 
 
@@ -228,6 +238,8 @@ test("erf", () => {
   expect(a).toBe(0.11246296562219549);
   var a = erf(1);
   expect(a).toBe(0.8427006897475899);
+  var a = erf(-1);  // sp
+  expect(a).toBe(-0.8427006897475899);  // sp
 });
 
 
@@ -238,6 +250,8 @@ test("erfc", () => {
   expect(a).toBe(0.887537083981715);
   var a = erfc(1);
   expect(a).toBe(0.1572992070502851);
+  var a = erfc(-1);  // sp
+  expect(a).toBe(2-0.1572992070502851);  // sp
 });
 
 
