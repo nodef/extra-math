@@ -86,7 +86,7 @@ export function lcm(...xs: number[]): number {
 export function factorial(n: number, k: number=0): number {
   if (n<0) return 0;
   for (var i=k+1, a=1; i<=n; i++)
-    a *= n;
+    a *= i;
   return a;
 }
 // - https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/factorial.ts
@@ -208,7 +208,8 @@ export function lerp(x: number, y: number, t: number): number {
  * @returns ⁿ√x
  */
 export function root(x: number, n: number): number {
-  return Math.pow(x, 1/n);
+  if ((n & 1)===0) return Math.pow(x, 1/n);
+  return   Math.sign(x) * Math.pow(Math.abs(x), 1/n);
 }
 // - https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/root.ts
 
@@ -225,16 +226,20 @@ export function log(x: number, b: number=Math.E): number {
 // - https://en.wikipedia.org/wiki/Logarithm
 
 
+function powAbs(x: number, n: number): number {
+  return Math.sign(x) * Math.pow(Math.abs(x), n);
+}
+
 /**
  * Compute the gamma function of a number (Γ).
  * @param x a number
  * @returns Γ(x); for +ve integer Γ(x) = x!
  */
-export function gamma(x: number): number {
+function gamma(x: number): number {
   var x  = x - 1;
-  var e1 = Math.sqrt(2*Math.PI*x);
-  var e2 = Math.pow(x/Math.E, x);
-  var e3 = Math.pow(x*Math.sinh(1/x), x/2);
+  var e1 = Math.sqrt(Math.abs(2*Math.PI*x));
+  var e2 = powAbs(x/Math.E, x);
+  var e3 = powAbs(x*Math.sinh(1/x), x/2);
   var e4 = Math.exp((7/324)*(1/((x**3) * (35*x**2 + 33))));
   return e1*e2*e3*e4;
 }
@@ -246,7 +251,7 @@ export function gamma(x: number): number {
  * @param x a number
  * @returns log(|Γ(x)|)
  */
-export function lgamma(x: number): number {
+function lgamma(x: number): number {
   return Math.log(Math.abs(gamma(x)));
 }
 // - https://en.cppreference.com/w/cpp/numeric/math/lgamma
