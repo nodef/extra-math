@@ -164,9 +164,10 @@ export {constrain as clamp};
  * @param R upper bound of current range
  * @returns ∈ [0, 1]
  */
- export function norm(x: number, r: number, R: number): number {
+export function normalize(x: number, r: number, R: number): number {
   return (x - r)/(R - r);
 }
+export {normalize as norm};
 // - https://processing.org/reference/norm_.html
 
 
@@ -179,9 +180,10 @@ export {constrain as clamp};
  * @param T upper bound of target range
  * @returns ∈ [ymin, ymax]
  */
-export function map(x: number, r: number, R: number, t: number, T: number): number {
+export function remap(x: number, r: number, R: number, t: number, T: number): number {
   return t + ((x - r)/(R - r)) * (T - t);
 }
+export {remap as map};
 // - https://processing.org/reference/map_.html
 
 
@@ -205,7 +207,7 @@ export function lerp(x: number, y: number, t: number): number {
  * @param n root
  * @returns ⁿ√x
  */
- export function root(x: number, n: number): number {
+export function root(x: number, n: number): number {
   return Math.pow(x, 1/n);
 }
 // - https://github.com/alawatthe/MathLib/blob/master/src/Functn/functions/root.ts
@@ -228,7 +230,7 @@ export function log(x: number, b: number=Math.E): number {
  * @param x a number
  * @returns Γ(x); for +ve integer Γ(x) = x!
  */
- export function gamma(x: number): number {
+export function gamma(x: number): number {
   var x  = x - 1;
   var e1 = Math.sqrt(2*Math.PI*x);
   var e2 = Math.pow(x/Math.E, x);
@@ -244,7 +246,7 @@ export function log(x: number, b: number=Math.E): number {
  * @param x a number
  * @returns log(|Γ(x)|)
  */
- export function lgamma(x: number): number {
+export function lgamma(x: number): number {
   return Math.log(Math.abs(gamma(x)));
 }
 // - https://en.cppreference.com/w/cpp/numeric/math/lgamma
@@ -340,7 +342,7 @@ export function radians(x: number): number {
  * @param xs vector ([x, y, z, ...])
  * @returns √(x² + y² + z²)
  */
- export function magnitude(xs: number[]): number {
+export function magnitude(xs: number[]): number {
   var a = 0;
   for (var i=0, I=xs.length; i<I; i++)
     a += xs[i]**2;
