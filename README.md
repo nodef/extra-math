@@ -6,8 +6,13 @@ A collection of common mathematical functions.<br>
 📘 [Wiki](https://github.com/nodef/extra-math/wiki/).
 
 Mathematics is the classification and study of all possible patterns [(1)]. This
-package includes common mathematical functions related to *natural numbers*, *real*
-*numbers*, *geometry*, and *statistics*.
+package includes common number functions related to querying *about* numbers,
+*comparing* numbers, *rounding* numbers, performing *rounded division*,
+performing *modulo* operations, *controlling range* of numbers, performing
+*arithmetic* operations, obtaining *divisors* of a number (and related
+operations), getting the number of possible *arrangements* of a set of objects,
+performing *geometry*-related calculations, performing basic *statistical*
+analysis, and finding various *statistical means*.
 
 **Natural numbers**: There are 3 different ways of performing the *modulo*
 operation: [rem], [mod], and [modp]. [gcd]/`HCF` and [lcm] of a list of numbers
@@ -17,9 +22,7 @@ can be obtained. To calculate the number of ways of *ordering items*, use
 **Real numbers**: *Range* of a number can be controlled with [constrain],
 [normalize], or [remap]. Use [lerp] for *linear interpolation* (or extrapolation);
 [root] for calculating the *n-th root* of a number; and [log] to find the
-*logarithm* of a number with a given base. Results of *special mathematical
-functions* (approximations) for a given number can be obtained with [erf]
-and [erfc].
+*logarithm* of a number with a given base.
 
 **Geometry**: Perform conversion from [degrees] to [radians] and vice versa.
 Find the [magnitude] of a vector or [distance] between two points.
@@ -67,23 +70,39 @@ math.lcm(2, 3, 4);
 
 | Property | Description |
 |  ----  |  ----  |
+| [floor] | Round down a number to specific precision. |
+| [ceil] | Round up a number to specific precision. |
+| [round] | Round a number to specific precision. |
+|  |  |
+| [floorDiv] | Perform floor-divison of two numbers. |
+| [ceilDiv] | Perform ceiling-divison of two numbers. |
+| [roundDiv] | Perform rounded-divison of two numbers. |
+|  |  |
 | [rem] | Find the remainder of x/y with sign of x (truncated division). |
 | [mod] | Find the remainder of x/y with sign of y (floored division). |
 | [modp] | Find the remainder of x/y with +ve sign (euclidean division). |
-| [gcd] | Find the greatest common divisor of numbers. |
-| [lcm] | Find the least common multiple of numbers. |
-| [factorial] | Find the factorial of a number. |
-| [binomial] | Find the number of ways to choose k elements from a set of n elements. |
-| [multinomial] | Find the number of ways to put n objects in m bins (n=sum(kᵢ)). |
 |  |  |
 | [constrain] | Constrain a number within a minimum and a maximum value. |
 | [normalize] | Normalize a number from its current range into a value between 0 and 1. |
 | [remap] | Re-map a number from one range to another. |
 | [lerp] | Linearly interpolate a number between two numbers. |
+|  |  |
+| [isPow] | Check if a number is a power-of-n. |
+| [prevPow] | Get previous power-of-n of a number. |
+| [nextPow] | Find next power-of-n of a number. |
+|  |  |
 | [root] | Find the nth root of a number (ⁿ√). |
 | [log] | Find the logarithm of a number with a given base. |
-| [erf] | Find error function value of number (approximation). |
-| [erfc] | Find the complementary error function value of number (approximation). |
+|  |  |
+| [properDivisors] | List all divisors of a number, except itself. |
+| [aliquotSum] | Sum all proper divisors of a number. |
+| [isPrime] | Check if number is prime. |
+| [gcd] | Find the greatest common divisor of numbers. |
+| [lcm] | Find the least common multiple of numbers. |
+|  |  |
+| [factorial] | Find the factorial of a number. |
+| [binomial] | Find the number of ways to choose k elements from a set of n elements. |
+| [multinomial] | Find the number of ways to put n objects in m bins (n=sum(kᵢ)). |
 |  |  |
 | [degrees] | Convert radians to degrees. |
 | [radians] | Convert degrees to radians. |
@@ -92,11 +111,16 @@ math.lcm(2, 3, 4);
 |  |  |
 | [sum] | Find the sum of numbers (Σ). |
 | [product] | Find the product of numbers (∏). |
-| [mean] | Find the average of numbers. |
 | [median] | Find the value separating the higher and lower halves of numbers. |
 | [modes] | Find the values that appear most often. |
-| [range] | Find the difference between the largest and smallest values. |
+| [range] | Find the smallest and largest values. |
 | [variance] | Find the mean of squared deviation of numbers from its mean. |
+|  |  |
+| [arithmeticMean] | Find the average of numbers. |
+| [geometricMean] | Find the geometric mean of numbers. |
+| [harmonicMean] | Find the harmonic mean of numbers. |
+| [quadriaticMean] | Find the quadriatic mean of numbers. |
+| [cubicMean] | Find the cubic mean of numbers. |
 
 <br>
 <br>
@@ -127,30 +151,44 @@ math.lcm(2, 3, 4);
 [![Maintainability](https://api.codeclimate.com/v1/badges/13d7102b0273f2a77c66/maintainability)](https://codeclimate.com/github/nodef/extra-math/maintainability)
 
 
+[floor]: https://nodef.github.io/extra-math/functions/floor.html
+[ceil]: https://nodef.github.io/extra-math/functions/ceil.html
+[round]: https://nodef.github.io/extra-math/functions/round.html
+[floorDiv]: https://nodef.github.io/extra-math/functions/floorDiv.html
+[ceilDiv]: https://nodef.github.io/extra-math/functions/ceilDiv.html
+[roundDiv]: https://nodef.github.io/extra-math/functions/roundDiv.html
 [rem]: https://nodef.github.io/extra-math/functions/rem.html
 [mod]: https://nodef.github.io/extra-math/functions/mod.html
 [modp]: https://nodef.github.io/extra-math/functions/modp.html
+[constrain]: https://nodef.github.io/extra-math/functions/constrain.html
+[normalize]: https://nodef.github.io/extra-math/functions/normalize.html
+[remap]: https://nodef.github.io/extra-math/functions/remap.html
+[lerp]: https://nodef.github.io/extra-math/functions/lerp.html
+[isPow]: https://nodef.github.io/extra-math/functions/isPow.html
+[prevPow]: https://nodef.github.io/extra-math/functions/prevPow.html
+[nextPow]: https://nodef.github.io/extra-math/functions/nextPow.html
+[root]: https://nodef.github.io/extra-math/functions/root.html
+[log]: https://nodef.github.io/extra-math/functions/log.html
+[properDivisors]: https://nodef.github.io/extra-math/functions/properDivisors.html
+[aliquotSum]: https://nodef.github.io/extra-math/functions/aliquotSum.html
+[isPrime]: https://nodef.github.io/extra-math/functions/isPrime.html
 [gcd]: https://nodef.github.io/extra-math/functions/gcd.html
 [lcm]: https://nodef.github.io/extra-math/functions/lcm.html
 [factorial]: https://nodef.github.io/extra-math/functions/factorial.html
 [binomial]: https://nodef.github.io/extra-math/functions/binomial.html
 [multinomial]: https://nodef.github.io/extra-math/functions/multinomial.html
-[constrain]: https://nodef.github.io/extra-math/functions/constrain.html
-[root]: https://nodef.github.io/extra-math/functions/root.html
-[log]: https://nodef.github.io/extra-math/functions/log.html
-[normalize]: https://nodef.github.io/extra-math/functions/normalize.html
-[remap]: https://nodef.github.io/extra-math/functions/remap.html
-[lerp]: https://nodef.github.io/extra-math/functions/lerp.html
-[erf]: https://nodef.github.io/extra-math/functions/erf.html
-[erfc]: https://nodef.github.io/extra-math/functions/erfc.html
 [degrees]: https://nodef.github.io/extra-math/functions/degrees.html
 [radians]: https://nodef.github.io/extra-math/functions/radians.html
 [magnitude]: https://nodef.github.io/extra-math/functions/magnitude.html
 [distance]: https://nodef.github.io/extra-math/functions/distance.html
 [sum]: https://nodef.github.io/extra-math/functions/sum.html
 [product]: https://nodef.github.io/extra-math/functions/product.html
-[mean]: https://nodef.github.io/extra-math/functions/mean.html
 [median]: https://nodef.github.io/extra-math/functions/median.html
 [modes]: https://nodef.github.io/extra-math/functions/modes.html
 [range]: https://nodef.github.io/extra-math/functions/range.html
 [variance]: https://nodef.github.io/extra-math/functions/variance.html
+[arithmeticMean]: https://nodef.github.io/extra-math/functions/arithmeticMean.html
+[geometricMean]: https://nodef.github.io/extra-math/functions/geometricMean.html
+[harmonicMean]: https://nodef.github.io/extra-math/functions/harmonicMean.html
+[quadriaticMean]: https://nodef.github.io/extra-math/functions/quadriaticMean.html
+[cubicMean]: https://nodef.github.io/extra-math/functions/cubicMean.html
