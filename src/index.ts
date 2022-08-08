@@ -139,3 +139,5 @@ export {geometricMean}  from "extra-number";
 export {harmonicMean}   from "extra-number";
 export {quadriaticMean} from "extra-number";
 export {cubicMean}      from "extra-number";
+export {arithmeticMean as mean}           from "extra-number";
+export {quadriaticMean as rootMeanSquare} from "extra-number";
