@@ -1,6 +1,8 @@
-import * as math   from "../src";
-import {magnitude} from "../src";
-import {distance}  from "../src";
+import * as math from "../src";
+import {
+  magnitude,
+  distance,
+} from "../src";
 // import {gamma}     from "../src";
 // import {lgamma}    from "../src";
 // import {erf}       from "../src";
