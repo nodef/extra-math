@@ -28,7 +28,7 @@ can be obtained. To calculate the number of ways of *ordering items*, use
 Find the [magnitude] of a vector or [distance] between two points.
 
 **Statistics**: For a list of numbers, we can calculate the [sum], [product],
-[mean]. [median] gives the value lying in the middle when the numbers are
+[arithmeticMean]. [median] gives the value lying in the middle when the numbers are
 sorted, and [modes] gives the values which are repeated most often. The
 difference between the largest and the smallest values is the [range].
 [variance] is a measure of variability of numbers.
@@ -88,14 +88,18 @@ math.lcm(2, 3, 4);
 | [lerp] | Linearly interpolate a number between two numbers. |
 |  |  |
 | [isPow] | Check if a number is a power-of-n. |
-| [prevPow] | Get previous power-of-n of a number. |
-| [nextPow] | Find next power-of-n of a number. |
+| [prevPow] | Find largest power-of-n less than or equal to given number. |
+| [nextPow] | Find smallest power-of-n greater than or equal to given number. |
 |  |  |
 | [root] | Find the nth root of a number (ⁿ√). |
 | [log] | Find the logarithm of a number with a given base. |
 |  |  |
 | [properDivisors] | List all divisors of a number, except itself. |
 | [aliquotSum] | Sum all proper divisors of a number. |
+| [minPrimeFactor] | Find the least prime number which divides a number. |
+| [maxPrimeFactor] | Find the greatest prime number which divides a number. |
+| [primeFactors] | Find the prime factors of a number. |
+| [primeExponentials] | Find the prime factors and respective exponents of a number. |
 | [isPrime] | Check if number is prime. |
 | [gcd] | Find the greatest common divisor of numbers. |
 | [lcm] | Find the least common multiple of numbers. |
@@ -172,6 +176,10 @@ math.lcm(2, 3, 4);
 [log]: https://nodef.github.io/extra-math/functions/log.html
 [properDivisors]: https://nodef.github.io/extra-math/functions/properDivisors.html
 [aliquotSum]: https://nodef.github.io/extra-math/functions/aliquotSum.html
+[minPrimeFactor]: https://nodef.github.io/extra-math/functions/minPrimeFactor.html
+[maxPrimeFactor]: https://nodef.github.io/extra-math/functions/maxPrimeFactor.html
+[primeFactors]: https://nodef.github.io/extra-math/functions/primeFactors.html
+[primeExponentials]: https://nodef.github.io/extra-math/functions/primeExponentials.html
 [isPrime]: https://nodef.github.io/extra-math/functions/isPrime.html
 [gcd]: https://nodef.github.io/extra-math/functions/gcd.html
 [lcm]: https://nodef.github.io/extra-math/functions/lcm.html
