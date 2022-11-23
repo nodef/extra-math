@@ -33,6 +33,9 @@ test("example1", () => {
 
 
 
+// GEOMETRY
+// --------
+
 test("magnitude", () => {
   var a = magnitude([5, 9]);
   expect(a).toBe(Math.sqrt(106));
