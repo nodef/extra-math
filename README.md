@@ -1,13 +1,12 @@
-A collection of common mathematical functions.<br>
+**Mathematics** is the classification and study of all possible patterns [(1)].<br>
 📦 [Node.js](https://www.npmjs.com/package/extra-math),
 🌐 [Web](https://www.npmjs.com/package/extra-math.web),
 📜 [Files](https://unpkg.com/extra-math/),
 📰 [JSDoc](https://nodef.github.io/extra-math/),
 📘 [Wiki](https://github.com/nodef/extra-math/wiki/).
 
-Mathematics is the classification and study of all possible patterns [(1)]. This
-package includes common number functions related to querying *about* numbers,
-*comparing* numbers, *rounding* numbers, performing *rounded division*,
+This package includes common number functions related to querying *about*
+numbers, *comparing* numbers, *rounding* numbers, performing *rounded division*,
 performing *modulo* operations, *controlling range* of numbers, performing
 *arithmetic* operations, obtaining *divisors* of a number (and related
 operations), getting the number of possible *arrangements* of a set of objects,
@@ -33,8 +32,9 @@ sorted, and [modes] gives the values which are repeated most often. The
 difference between the largest and the smallest values is the [range].
 [variance] is a measure of variability of numbers.
 
-This package is available in both *Node.js* and *Web* formats. The web format is
-exposed as `extra_math` standalone variable and can be loaded from [jsDelivr CDN].
+This package is available in *Node.js* and *Web* formats. To use it on the web,
+simply use the `extra_math` global variable after loading with a `<script>`
+tag from the [jsDelivr CDN].
 
 [(1)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
 [jsDelivr CDN]: https://cdn.jsdelivr.net/npm/extra-math.web/index.js
@@ -45,20 +45,20 @@ exposed as `extra_math` standalone variable and can be loaded from [jsDelivr CDN
 
 
 ```javascript
-const math = require('extra-math');
-// import * as math from "extra-math";
-// import * as math from "https://unpkg.com/extra-math/index.mjs"; (deno)
+const xmath = require('extra-math');
+// import * as xmath from "extra-math";
+// import * as xmath from "https://unpkg.com/extra-math/index.mjs"; (deno)
 
-math.sum(1, 2, 3, 4);
+xmath.sum(1, 2, 3, 4);
 // → 10
 
-math.median(1, 7, 8);
+xmath.median(1, 7, 8);
 // → 7
 
-math.variance(1, 2, 3, 4);
+xmath.variance(1, 2, 3, 4);
 // → 1.25
 
-math.lcm(2, 3, 4);
+xmath.lcm(2, 3, 4);
 // → 12
 ```
 
