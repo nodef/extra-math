@@ -154,7 +154,7 @@ xmath.lcm(2, 3, 4);
 [![Coverage Status](https://coveralls.io/repos/github/nodef/extra-math/badge.svg?branch=master)](https://coveralls.io/github/nodef/extra-math?branch=master)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/13d7102b0273f2a77c66/test_coverage)](https://codeclimate.com/github/nodef/extra-math/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/13d7102b0273f2a77c66/maintainability)](https://codeclimate.com/github/nodef/extra-math/maintainability)
-
+![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/extra-math)
 
 [floor]: https://github.com/nodef/extra-math/wiki/floor
 [ceil]: https://github.com/nodef/extra-math/wiki/ceil
