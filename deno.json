@@ -1,6 +1,16 @@
 {
   "name": "@nodef/extra-math",
-  "version": "0.1.0",
+  "version": "1.6.2",
   "license": "MIT",
-  "exports": "./index.ts"
+  "exports": "./index.ts",
+  "exclude": [
+    ".github/",
+    "scripts/",
+    "build.ts"
+  ],
+  "imports": {
+    "@nodef/extra-number": "jsr:@nodef/extra-number@^2.6.0",
+    "@std/assert": "jsr:@std/assert@^1.0.19",
+    "@std/cli": "jsr:@std/cli@^1.0.32"
+  }
 }

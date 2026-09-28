@@ -62,7 +62,7 @@ export {
   quadriaticMean,
   quadriaticMean as rootMeanSquare,
   cubicMean,
-} from "jsr:@nodef/extra-number@0.1.0";
+} from "@nodef/extra-number";
 //#endregion
 
 

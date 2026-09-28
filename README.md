@@ -1,4 +1,11 @@
-**Mathematics** is the classification and study of all possible patterns [(1)]. This package includes common number functions related to querying *about* numbers, *comparing* numbers, *rounding* numbers, performing *rounded division*, performing *modulo* operations, *controlling range* of numbers, performing *arithmetic* operations, obtaining *divisors* of a number (and related operations), getting the number of possible *arrangements* of a set of objects, performing *geometry*-related calculations, performing basic *statistical* analysis, and finding various *statistical means*.
+**Mathematics** is the classification and study of all possible patterns [(1)].
+
+▌
+📦 [JSR](https://jsr.io/@nodef/extra-math),
+📦 [NPM](https://www.npmjs.com/package/@nodef/extra-math),
+📰 [Docs](https://jsr.io/@nodef/extra-math/doc).
+
+This package includes common number functions related to querying *about* numbers, *comparing* numbers, *rounding* numbers, performing *rounded division*, performing *modulo* operations, *controlling range* of numbers, performing *arithmetic* operations, obtaining *divisors* of a number (and related operations), getting the number of possible *arrangements* of a set of objects, performing *geometry*-related calculations, performing basic *statistical* analysis, and finding various *statistical means*.
 
 **Natural numbers**: There are 3 different ways of performing the *modulo* operation: [rem], [mod], and [modp]. [gcd]/`HCF` and [lcm] of a list of numbers can be obtained. To calculate the number of ways of *ordering items*, use [factorial]/`P(n, k)`, [binomial]/`C(n, k)`, or [multinomial]/`n!/k₁!k₂!...`.
 
@@ -9,10 +16,6 @@
 **Statistics**: For a list of numbers, we can calculate the [sum], [product], [arithmeticMean]. [median] gives the value lying in the middle when the numbers are sorted, and [modes] gives the values which are repeated most often. The difference between the largest and the smallest values is the [range]. [variance] is a measure of variability of numbers.
 
 [(1)]: https://en.wikipedia.org/wiki/Walter_Warwick_Sawyer
-
-▌
-📦 [JSR](https://jsr.io/@nodef/extra-math),
-📰 [Docs](https://jsr.io/@nodef/extra-math/doc),
 
 <br>
 
@@ -124,48 +127,48 @@ xmath.lcm(2, 3, 4);
 ![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/extra-math)
 
 
-[floor]: https://jsr.io/@nodef/extra-sql/doc/~/floor
-[ceil]: https://jsr.io/@nodef/extra-sql/doc/~/ceil
-[round]: https://jsr.io/@nodef/extra-sql/doc/~/round
-[floorDiv]: https://jsr.io/@nodef/extra-sql/doc/~/floorDiv
-[ceilDiv]: https://jsr.io/@nodef/extra-sql/doc/~/ceilDiv
-[roundDiv]: https://jsr.io/@nodef/extra-sql/doc/~/roundDiv
-[rem]: https://jsr.io/@nodef/extra-sql/doc/~/rem
-[mod]: https://jsr.io/@nodef/extra-sql/doc/~/mod
-[modp]: https://jsr.io/@nodef/extra-sql/doc/~/modp
-[constrain]: https://jsr.io/@nodef/extra-sql/doc/~/constrain
-[normalize]: https://jsr.io/@nodef/extra-sql/doc/~/normalize
-[remap]: https://jsr.io/@nodef/extra-sql/doc/~/remap
-[lerp]: https://jsr.io/@nodef/extra-sql/doc/~/lerp
-[isPow]: https://jsr.io/@nodef/extra-sql/doc/~/isPow
-[prevPow]: https://jsr.io/@nodef/extra-sql/doc/~/prevPow
-[nextPow]: https://jsr.io/@nodef/extra-sql/doc/~/nextPow
-[root]: https://jsr.io/@nodef/extra-sql/doc/~/root
-[log]: https://jsr.io/@nodef/extra-sql/doc/~/log
-[properDivisors]: https://jsr.io/@nodef/extra-sql/doc/~/properDivisors
-[aliquotSum]: https://jsr.io/@nodef/extra-sql/doc/~/aliquotSum
-[minPrimeFactor]: https://jsr.io/@nodef/extra-sql/doc/~/minPrimeFactor
-[maxPrimeFactor]: https://jsr.io/@nodef/extra-sql/doc/~/maxPrimeFactor
-[primeFactors]: https://jsr.io/@nodef/extra-sql/doc/~/primeFactors
-[primeExponentials]: https://jsr.io/@nodef/extra-sql/doc/~/primeExponentials
-[isPrime]: https://jsr.io/@nodef/extra-sql/doc/~/isPrime
-[gcd]: https://jsr.io/@nodef/extra-sql/doc/~/gcd
-[lcm]: https://jsr.io/@nodef/extra-sql/doc/~/lcm
-[factorial]: https://jsr.io/@nodef/extra-sql/doc/~/factorial
-[binomial]: https://jsr.io/@nodef/extra-sql/doc/~/binomial
-[multinomial]: https://jsr.io/@nodef/extra-sql/doc/~/multinomial
-[degrees]: https://jsr.io/@nodef/extra-sql/doc/~/degrees
-[radians]: https://jsr.io/@nodef/extra-sql/doc/~/radians
-[magnitude]: https://jsr.io/@nodef/extra-sql/doc/~/magnitude
-[distance]: https://jsr.io/@nodef/extra-sql/doc/~/distance
-[sum]: https://jsr.io/@nodef/extra-sql/doc/~/sum
-[product]: https://jsr.io/@nodef/extra-sql/doc/~/product
-[median]: https://jsr.io/@nodef/extra-sql/doc/~/median
-[modes]: https://jsr.io/@nodef/extra-sql/doc/~/modes
-[range]: https://jsr.io/@nodef/extra-sql/doc/~/range
-[variance]: https://jsr.io/@nodef/extra-sql/doc/~/variance
-[arithmeticMean]: https://jsr.io/@nodef/extra-sql/doc/~/arithmeticMean
-[geometricMean]: https://jsr.io/@nodef/extra-sql/doc/~/geometricMean
-[harmonicMean]: https://jsr.io/@nodef/extra-sql/doc/~/harmonicMean
-[quadriaticMean]: https://jsr.io/@nodef/extra-sql/doc/~/quadriaticMean
-[cubicMean]: https://jsr.io/@nodef/extra-sql/doc/~/cubicMean
+[floor]: https://jsr.io/@nodef/extra-math/doc/~/floor
+[ceil]: https://jsr.io/@nodef/extra-math/doc/~/ceil
+[round]: https://jsr.io/@nodef/extra-math/doc/~/round
+[floorDiv]: https://jsr.io/@nodef/extra-math/doc/~/floorDiv
+[ceilDiv]: https://jsr.io/@nodef/extra-math/doc/~/ceilDiv
+[roundDiv]: https://jsr.io/@nodef/extra-math/doc/~/roundDiv
+[rem]: https://jsr.io/@nodef/extra-math/doc/~/rem
+[mod]: https://jsr.io/@nodef/extra-math/doc/~/mod
+[modp]: https://jsr.io/@nodef/extra-math/doc/~/modp
+[constrain]: https://jsr.io/@nodef/extra-math/doc/~/constrain
+[normalize]: https://jsr.io/@nodef/extra-math/doc/~/normalize
+[remap]: https://jsr.io/@nodef/extra-math/doc/~/remap
+[lerp]: https://jsr.io/@nodef/extra-math/doc/~/lerp
+[isPow]: https://jsr.io/@nodef/extra-math/doc/~/isPow
+[prevPow]: https://jsr.io/@nodef/extra-math/doc/~/prevPow
+[nextPow]: https://jsr.io/@nodef/extra-math/doc/~/nextPow
+[root]: https://jsr.io/@nodef/extra-math/doc/~/root
+[log]: https://jsr.io/@nodef/extra-math/doc/~/log
+[properDivisors]: https://jsr.io/@nodef/extra-math/doc/~/properDivisors
+[aliquotSum]: https://jsr.io/@nodef/extra-math/doc/~/aliquotSum
+[minPrimeFactor]: https://jsr.io/@nodef/extra-math/doc/~/minPrimeFactor
+[maxPrimeFactor]: https://jsr.io/@nodef/extra-math/doc/~/maxPrimeFactor
+[primeFactors]: https://jsr.io/@nodef/extra-math/doc/~/primeFactors
+[primeExponentials]: https://jsr.io/@nodef/extra-math/doc/~/primeExponentials
+[isPrime]: https://jsr.io/@nodef/extra-math/doc/~/isPrime
+[gcd]: https://jsr.io/@nodef/extra-math/doc/~/gcd
+[lcm]: https://jsr.io/@nodef/extra-math/doc/~/lcm
+[factorial]: https://jsr.io/@nodef/extra-math/doc/~/factorial
+[binomial]: https://jsr.io/@nodef/extra-math/doc/~/binomial
+[multinomial]: https://jsr.io/@nodef/extra-math/doc/~/multinomial
+[degrees]: https://jsr.io/@nodef/extra-math/doc/~/degrees
+[radians]: https://jsr.io/@nodef/extra-math/doc/~/radians
+[magnitude]: https://jsr.io/@nodef/extra-math/doc/~/magnitude
+[distance]: https://jsr.io/@nodef/extra-math/doc/~/distance
+[sum]: https://jsr.io/@nodef/extra-math/doc/~/sum
+[product]: https://jsr.io/@nodef/extra-math/doc/~/product
+[median]: https://jsr.io/@nodef/extra-math/doc/~/median
+[modes]: https://jsr.io/@nodef/extra-math/doc/~/modes
+[range]: https://jsr.io/@nodef/extra-math/doc/~/range
+[variance]: https://jsr.io/@nodef/extra-math/doc/~/variance
+[arithmeticMean]: https://jsr.io/@nodef/extra-math/doc/~/arithmeticMean
+[geometricMean]: https://jsr.io/@nodef/extra-math/doc/~/geometricMean
+[harmonicMean]: https://jsr.io/@nodef/extra-math/doc/~/harmonicMean
+[quadriaticMean]: https://jsr.io/@nodef/extra-math/doc/~/quadriaticMean
+[cubicMean]: https://jsr.io/@nodef/extra-math/doc/~/cubicMean
