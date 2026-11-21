@@ -1,6 +1,6 @@
 {
   "name": "@nodef/extra-math",
-  "version": "1.6.2",
+  "version": "1.8.0",
   "license": "MIT",
   "exports": "./index.ts",
   "exclude": [

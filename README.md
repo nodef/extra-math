@@ -3,6 +3,7 @@
 ▌
 📦 [JSR](https://jsr.io/@nodef/extra-math),
 📦 [NPM](https://www.npmjs.com/package/@nodef/extra-math),
+🌐 [Web](https://cdn.jsdelivr.net/npm/@nodef/extra-math.web),
 📰 [Docs](https://jsr.io/@nodef/extra-math/doc).
 
 This package includes common number functions related to querying *about* numbers, *comparing* numbers, *rounding* numbers, performing *rounded division*, performing *modulo* operations, *controlling range* of numbers, performing *arithmetic* operations, obtaining *divisors* of a number (and related operations), getting the number of possible *arrangements* of a set of objects, performing *geometry*-related calculations, performing basic *statistical* analysis, and finding various *statistical means*.
